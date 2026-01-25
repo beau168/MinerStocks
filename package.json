@@ -1,0 +1,14 @@
+{
+    "name": "miner-stocks",
+    "version": "1.0.0",
+    "description": "StockAnalytics Market Overview",
+    "main": "index.html",
+    "scripts": {
+        "dev": "wrangler pages dev . --compatibility-date=2024-04-01",
+        "build": "echo 'Static project, no build required'",
+        "deploy": "wrangler pages deploy . --project-name=miner-stocks"
+    },
+    "devDependencies": {
+        "wrangler": "^3.0.0"
+    }
+}
