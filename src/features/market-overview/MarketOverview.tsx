@@ -85,7 +85,7 @@ export const MarketOverview: React.FC = () => {
             </aside>
             <main className="flex-1 flex flex-col min-w-0 overflow-hidden bg-background-dark relative">
                 <div className="flex-1 overflow-y-auto p-6 md:p-8 lg:p-10 pb-20">
-                    <div className="max-w-[1200px] mx-auto flex flex-col gap-8">
+                    <div className="max-w-none flex flex-col gap-8">
                         <header className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                             <div className="flex flex-col gap-2">
                                 <h1 className="text-3xl md:text-4xl font-black leading-tight tracking-tight text-white">Market Overview: Q3 2023</h1>
