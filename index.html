@@ -62,11 +62,48 @@
 
         .custom-select {
             appearance: none;
-            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAsLXKeZ8AsIFgXWMWtjiEmPma69SM60WRT0zTOOEUSZsLyNep_h8ufpWZT8D5YpieOfWZGtkDjtz8r_t-JRVplYFkrfsyyAhZsoXEDEeu_56NvuSDqv7vDp9eVWMUGF2auArA-gh23Fa6Es5Nzwg6dgtyznDZOuQExnkkXgVXSxQ1MeYMNcR_V0YTGdVf0q2Q-dAPGqB7JTkRCrgY7i9l5TmeJz3Obk3QP8VqiG5TD7OvqNwZqnHOF7cZqL78vxE2WCB-JTj6v1Hw);
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDTqpSdGlW6FGOB7tU_lRKP4wkzzG15Q2YFeA0ERWN-KM1kBdRoj7V5hzduuH1BRPwWXiO_uZsTkUAs3yaQVzkI7MyF-erYsNoGcKu-gCr5xAvqNrCw77FR--APV6PfXaA-ScfeYH4LbXuHxar9KuqUVrwGtiLwMz57GWJojQKV0JTz4E5V5jqduYGy4HXwDgUGAjKfgH-4zk7CXOdSVK8RG7RMBciQlkf2Zm52Y8o7CqdFjFuW5fLTpM4E5SsxyWduHcdsGEhpQGI);
             background-repeat: no-repeat;
             background-position: right 0.75rem center;
             background-size: 1rem;
             padding-right: 2.5rem
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: max-content;
+            max-width: 280px;
+            background-color: #111722;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 12px;
+            position: absolute;
+            z-index: 100000;
+            top: 150%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            border: 1px solid #324467;
+            font-size: 0.75rem;
+            text-transform: none;
+            font-weight: 400;
+            line-height: 1.4;
+            letter-spacing: normal;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+            pointer-events: none;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
         }
     </style>
 </head>
