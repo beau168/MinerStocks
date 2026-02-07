@@ -1,8 +1,4 @@
 /* Base styles */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --primary: #135bec;
   --background-light: #f6f6f8;
