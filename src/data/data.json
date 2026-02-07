@@ -1,0 +1,281 @@
+{
+    "companies": [
+        {
+            "id": "nem",
+            "name": "Newmont Corp",
+            "ticker": "NEM",
+            "color": "#fbbf24",
+            "nextEarningsDate": "2025-10-28"
+        },
+        {
+            "id": "gold",
+            "name": "Barrick Gold",
+            "ticker": "GOLD",
+            "color": "#2563eb",
+            "nextEarningsDate": "2025-11-04"
+        },
+        {
+            "id": "aem",
+            "name": "Agnico Eagle",
+            "ticker": "AEM",
+            "color": "#64748b",
+            "nextEarningsDate": "2025-10-31"
+        },
+        {
+            "id": "wpm",
+            "name": "Wheaton Precious",
+            "ticker": "WPM",
+            "color": "#9333ea",
+            "nextEarningsDate": "2025-11-10"
+        },
+        {
+            "id": "fnv",
+            "name": "Franco-Nevada",
+            "ticker": "FNV",
+            "color": "#10b981",
+            "nextEarningsDate": "2025-11-12"
+        }
+    ],
+    "quarters": [
+        {
+            "quarter": "Q3 2025",
+            "data": [
+                {
+                    "companyId": "nem",
+                    "marketCap": 39800000000,
+                    "revenue": 11200000000,
+                    "eps": 1.65,
+                    "profitMargins": 14.7,
+                    "fcf": 450000000,
+                    "qoq": 2.4,
+                    "yoy": 12.1,
+                    "debt": 5400000000
+                },
+                {
+                    "companyId": "gold",
+                    "marketCap": 26500000000,
+                    "revenue": 10800000000,
+                    "eps": 0.92,
+                    "profitMargins": 8.5,
+                    "fcf": 310000000,
+                    "qoq": -1.2,
+                    "yoy": 5.8,
+                    "debt": 4200000000
+                },
+                {
+                    "companyId": "aem",
+                    "marketCap": 24100000000,
+                    "revenue": 6200000000,
+                    "eps": 2.10,
+                    "profitMargins": 33.9,
+                    "fcf": 120000000,
+                    "qoq": 4.8,
+                    "yoy": 18.5,
+                    "debt": 2100000000
+                },
+                {
+                    "companyId": "wpm",
+                    "marketCap": 20200000000,
+                    "revenue": 1100000000,
+                    "eps": 1.15,
+                    "profitMargins": 45.2,
+                    "fcf": 580000000,
+                    "qoq": 1.5,
+                    "yoy": -3.2,
+                    "debt": 500000000
+                },
+                {
+                    "companyId": "fnv",
+                    "marketCap": 20900000000,
+                    "revenue": 1300000000,
+                    "eps": 3.40,
+                    "profitMargins": 52.1,
+                    "fcf": 640000000,
+                    "qoq": 0.9,
+                    "yoy": 4.2,
+                    "debt": 200000000
+                }
+            ]
+        },
+        {
+            "quarter": "Q2 2025",
+            "data": [
+                {
+                    "companyId": "nem",
+                    "marketCap": 38100000000,
+                    "revenue": 10500000000,
+                    "eps": 1.55,
+                    "profitMargins": 13.9,
+                    "fcf": 410000000,
+                    "qoq": 3.2,
+                    "yoy": 10.5,
+                    "debt": 5500000000
+                },
+                {
+                    "companyId": "gold",
+                    "marketCap": 27100000000,
+                    "revenue": 11000000000,
+                    "eps": 0.98,
+                    "profitMargins": 9.2,
+                    "fcf": 350000000,
+                    "qoq": 1.5,
+                    "yoy": 6.3,
+                    "debt": 4300000000
+                },
+                {
+                    "companyId": "aem",
+                    "marketCap": 23500000000,
+                    "revenue": 5900000000,
+                    "eps": 1.95,
+                    "profitMargins": 32.5,
+                    "fcf": 115000000,
+                    "qoq": 2.1,
+                    "yoy": 16.2,
+                    "debt": 2200000000
+                },
+                {
+                    "companyId": "wpm",
+                    "marketCap": 19800000000,
+                    "revenue": 1080000000,
+                    "eps": 1.12,
+                    "profitMargins": 44.8,
+                    "fcf": 560000000,
+                    "qoq": 0.8,
+                    "yoy": -2.5,
+                    "debt": 550000000
+                },
+                {
+                    "companyId": "fnv",
+                    "marketCap": 20500000000,
+                    "revenue": 1280000000,
+                    "eps": 3.35,
+                    "profitMargins": 51.5,
+                    "fcf": 620000000,
+                    "qoq": 1.2,
+                    "yoy": 3.9,
+                    "debt": 220000000
+                }
+            ]
+        },
+        {
+            "quarter": "Q1 2025",
+            "data": [
+                {
+                    "companyId": "nem",
+                    "marketCap": 36500000000,
+                    "revenue": 9800000000,
+                    "eps": 1.48,
+                    "profitMargins": 12.8,
+                    "fcf": 380000000,
+                    "qoq": 2.8,
+                    "yoy": 9.2,
+                    "debt": 5800000000
+                },
+                {
+                    "companyId": "gold",
+                    "marketCap": 26800000000,
+                    "revenue": 10500000000,
+                    "eps": 0.94,
+                    "profitMargins": 8.9,
+                    "fcf": 330000000,
+                    "qoq": 1.0,
+                    "yoy": 5.1,
+                    "debt": 4500000000
+                },
+                {
+                    "companyId": "aem",
+                    "marketCap": 22800000000,
+                    "revenue": 5600000000,
+                    "eps": 1.88,
+                    "profitMargins": 31.8,
+                    "fcf": 105000000,
+                    "qoq": 1.8,
+                    "yoy": 15.5,
+                    "debt": 2300000000
+                },
+                {
+                    "companyId": "wpm",
+                    "marketCap": 19500000000,
+                    "revenue": 1050000000,
+                    "eps": 1.10,
+                    "profitMargins": 44.2,
+                    "fcf": 540000000,
+                    "qoq": 0.5,
+                    "yoy": -1.8,
+                    "debt": 600000000
+                },
+                {
+                    "companyId": "fnv",
+                    "marketCap": 20100000000,
+                    "revenue": 1250000000,
+                    "eps": 3.30,
+                    "profitMargins": 51.0,
+                    "fcf": 600000000,
+                    "qoq": 0.7,
+                    "yoy": 3.5,
+                    "debt": 250000000
+                }
+            ]
+        },
+        {
+            "quarter": "Q4 2024",
+            "data": [
+                {
+                    "companyId": "nem",
+                    "marketCap": 34800000000,
+                    "revenue": 9200000000,
+                    "eps": 1.35,
+                    "profitMargins": 11.5,
+                    "fcf": 350000000,
+                    "qoq": 2.5,
+                    "yoy": 8.5,
+                    "debt": 6000000000
+                },
+                {
+                    "companyId": "gold",
+                    "marketCap": 26200000000,
+                    "revenue": 10200000000,
+                    "eps": 0.88,
+                    "profitMargins": 8.2,
+                    "fcf": 310000000,
+                    "qoq": 0.8,
+                    "yoy": 4.8,
+                    "debt": 4700000000
+                },
+                {
+                    "companyId": "aem",
+                    "marketCap": 22100000000,
+                    "revenue": 5300000000,
+                    "eps": 1.75,
+                    "profitMargins": 30.5,
+                    "fcf": 95000000,
+                    "qoq": 1.5,
+                    "yoy": 14.8,
+                    "debt": 2400000000
+                },
+                {
+                    "companyId": "wpm",
+                    "marketCap": 19200000000,
+                    "revenue": 1020000000,
+                    "eps": 1.05,
+                    "profitMargins": 43.5,
+                    "fcf": 520000000,
+                    "qoq": 0.4,
+                    "yoy": -1.2,
+                    "debt": 650000000
+                },
+                {
+                    "companyId": "fnv",
+                    "marketCap": 19800000000,
+                    "revenue": 1220000000,
+                    "eps": 3.25,
+                    "profitMargins": 50.5,
+                    "fcf": 580000000,
+                    "qoq": 0.6,
+                    "yoy": 3.2,
+                    "debt": 280000000
+                }
+            ]
+        }
+    ]
+}

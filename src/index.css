@@ -26,3 +26,8 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
+
+html:not(.dark) body {
+  background-color: var(--background-light);
+  color: #101622;
+}

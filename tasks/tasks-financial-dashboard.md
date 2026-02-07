@@ -76,44 +76,44 @@ Update the file after completing each sub-task, not just after completing an ent
 - [x] 0.0 Create feature branch
   - [x] 0.1 Create and checkout a new branch for this feature: `git checkout -b feature/financial-dashboard`
 
-- [ ] 1.0 Set up data infrastructure
-  - [ ] 1.1 Create `src/data/` directory
-  - [ ] 1.2 Create `src/data/data.json` with sample data for 5 gold/silver mining companies:
+- [x] 1.0 Set up data infrastructure
+  - [x] 1.1 Create `src/data/` directory
+  - [x] 1.2 Create `src/data/data.json` with sample data for 5 gold/silver mining companies:
     - Newmont Corp (NEM)
     - Barrick Gold (GOLD)
     - Agnico Eagle (AEM)
     - Wheaton Precious Metals (WPM)
     - Franco-Nevada (FNV)
-  - [ ] 1.3 Populate `data.json` with 4 quarters of data (Q4 2024, Q1 2025, Q2 2025, Q3 2025)
-  - [ ] 1.4 Include all required fields per company per quarter: marketCap, revenue, eps, profitMargins, fcf, qoq, yoy, debt
-  - [ ] 1.5 Add nextEarningsDate and color to each company object
-  - [ ] 1.6 Create `src/types/index.ts` with TypeScript interfaces:
+  - [x] 1.3 Populate `data.json` with 4 quarters of data (Q4 2024, Q1 2025, Q2 2025, Q3 2025)
+  - [x] 1.4 Include all required fields per company per quarter: marketCap, revenue, eps, profitMargins, fcf, qoq, yoy, debt
+  - [x] 1.5 Add nextEarningsDate and color to each company object
+  - [x] 1.6 Create `src/types/index.ts` with TypeScript interfaces:
     - `Company` (id, name, ticker, color, nextEarningsDate)
     - `QuarterData` (companyId, marketCap, revenue, eps, profitMargins, fcf, qoq, yoy, debt)
     - `Quarter` (quarter, data: QuarterData[])
     - `FinancialData` (companies, quarters)
-  - [ ] 1.7 Create `src/hooks/useCompanyData.ts` hook to load and provide access to data.json
-  - [ ] 1.8 Write unit tests for `useCompanyData` hook
+  - [x] 1.7 Create `src/hooks/useCompanyData.ts` hook to load and provide access to data.json
+  - [x] 1.8 Write unit tests for `useCompanyData` hook
 
-- [ ] 2.0 Build reusable UI components
-  - [ ] 2.1 Create `src/components/ui/` directory
-  - [ ] 2.2 Create `Card.tsx` component using classes from PRD section 6.5 (Card Container)
-  - [ ] 2.3 Create `Select.tsx` component using classes from PRD section 6.5 (Custom Select Dropdown)
-  - [ ] 2.4 Create `Checkbox.tsx` component using classes from PRD section 6.5 (Checkbox Filter)
-  - [ ] 2.5 Create `Tooltip.tsx` component using classes from PRD section 6.5 (Tooltip)
-  - [ ] 2.6 Create `Button.tsx` component using classes from PRD section 6.5 (Pagination Button)
-  - [ ] 2.7 Create `src/components/layout/` directory
-  - [ ] 2.8 Create `Sidebar.tsx` by extracting sidebar from MarketOverview.tsx
-  - [ ] 2.9 Create `MainLayout.tsx` as a wrapper component with sidebar + main content area
-  - [ ] 2.10 Create `PageHeader.tsx` for page title and dropdown controls
-  - [ ] 2.11 Create `src/context/CompanyFilterContext.tsx` to manage which companies are checked/visible
-  - [ ] 2.12 Create `src/hooks/useCompanyFilter.ts` as a convenience hook for the context
-  - [ ] 2.13 Write unit tests for Sidebar component
+- [x] 2.0 Build reusable UI components
+  - [x] 2.1 Create `src/components/ui/` directory
+  - [x] 2.2 Create `Card.tsx` component using classes from PRD section 6.5 (Card Container)
+  - [x] 2.3 Create `Select.tsx` component using classes from PRD section 6.5 (Custom Select Dropdown)
+  - [x] 2.4 Create `Checkbox.tsx` component using classes from PRD section 6.5 (Checkbox Filter)
+  - [x] 2.5 Create `Tooltip.tsx` component using classes from PRD section 6.5 (Tooltip)
+  - [x] 2.6 Create `Button.tsx` component using classes from PRD section 6.5 (Pagination Button)
+  - [x] 2.7 Create `src/components/layout/` directory
+  - [x] 2.8 Create `Sidebar.tsx` by extracting sidebar from MarketOverview.tsx
+  - [x] 2.9 Create `MainLayout.tsx` as a wrapper component with sidebar + main content area
+  - [x] 2.10 Create `PageHeader.tsx` for page title and dropdown controls
+  - [x] 2.11 Create `src/context/CompanyFilterContext.tsx` to manage which companies are checked/visible
+  - [x] 2.12 Create `src/hooks/useCompanyFilter.ts` as a convenience hook for the context
+  - [x] 2.13 Write unit tests for Sidebar component
 
-- [ ] 3.0 Implement Dashboard with DataGrid
-  - [ ] 3.1 Create `src/components/dashboard/` directory
-  - [ ] 3.2 Create `QuarterSelector.tsx` dropdown component that lists available quarters from data.json
-  - [ ] 3.3 Create `DataGrid.tsx` component with the following columns:
+- [x] 3.0 Implement Dashboard with DataGrid
+  - [x] 3.1 Create `src/components/dashboard/` directory
+  - [x] 3.2 Create `QuarterSelector.tsx` dropdown component that lists available quarters from data.json
+  - [x] 3.3 Create `DataGrid.tsx` component with the following columns:
     - Rank (based on Market Cap, highest = 1)
     - Company (avatar + name + ticker)
     - Market Cap
@@ -124,72 +124,46 @@ Update the file after completing each sub-task, not just after completing an ent
     - QoQ (with tooltip, green/red coloring)
     - YoY (with tooltip, green/red coloring)
     - Debt
-  - [ ] 3.4 Implement conditional styling: positive QoQ/YoY in `text-accent-green`, negative in `text-accent-red`
-  - [ ] 3.5 Implement filtering: only show companies that are checked in the sidebar
-  - [ ] 3.6 Implement quarter switching: update data when a new quarter is selected
-  - [ ] 3.7 Create `Dashboard.tsx` page component that assembles:
+  - [x] 3.4 Implement conditional styling: positive QoQ/YoY in `text-accent-green`, negative in `text-accent-red`
+  - [x] 3.5 Implement filtering: only show companies that are checked in the sidebar
+  - [x] 3.6 Implement quarter switching: update data when a new quarter is selected
+  - [x] 3.7 Create `Dashboard.tsx` page component that assembles:
     - PageHeader with title "Market Overview: {selectedQuarter}" and QuarterSelector
     - DataGrid
     - (Placeholder for TrendChart - to be added in Task 4.0)
-  - [ ] 3.8 Update `App.tsx` to use MainLayout and render Dashboard as the home route
-  - [ ] 3.9 Add pagination to DataGrid (10 items per page) with Previous/Next buttons
-  - [ ] 3.10 Write unit tests for DataGrid component
+  - [x] 3.8 Update `App.tsx` to use MainLayout and render Dashboard as the home route
+  - [x] 3.9 Add pagination to DataGrid (10 items per page) with Previous/Next buttons
+  - [x] 3.10 Write unit tests for DataGrid component
 
-- [ ] 4.0 Implement Trend Chart
-  - [ ] 4.1 Install Recharts: `npm install recharts`
-  - [ ] 4.2 Create `src/components/charts/` directory
-  - [ ] 4.3 Create `MetricSelector.tsx` dropdown with options: Revenue, EPS, Profit Margins, FCF
-  - [ ] 4.4 Create `TrendChart.tsx` line chart component using Recharts:
+- [x] 4.0 Implement Trend Chart
+  - [x] 4.1 Install Recharts: `npm install recharts`
+  - [x] 4.2 Create `src/components/charts/` directory
+  - [x] 4.3 Create `MetricSelector.tsx` dropdown with options: Revenue, EPS, Profit Margins, FCF
+  - [x] 4.4 Create `TrendChart.tsx` line chart component using Recharts:
     - X-axis: quarters (e.g., Q4 2024, Q1 2025, Q2 2025, Q3 2025)
     - Y-axis: selected metric value
     - One line per visible company (use company.color for each line)
     - Legend showing company names with their colors
-  - [ ] 4.5 Integrate TrendChart into Dashboard.tsx below the DataGrid
-  - [ ] 4.6 Ensure chart updates when:
+  - [x] 4.5 Integrate TrendChart into Dashboard.tsx below the DataGrid
+  - [x] 4.6 Ensure chart updates when:
     - MetricSelector changes
     - Company filter checkboxes change
-  - [ ] 4.7 Add hover tooltips to chart showing exact values
-  - [ ] 4.8 Write unit tests for TrendChart component
+  - [x] 4.7 Add hover tooltips to chart showing exact values
+  - [x] 4.8 Write unit tests for TrendChart component
 
-- [ ] 5.0 Build Earnings Calendar
-  - [ ] 5.1 Create `src/components/earnings/` directory
-  - [ ] 5.2 Create `EarningsCalendar.tsx` table component with columns:
+- [x] 5.0 Build Earnings Calendar
+  - [x] 5.1 Create `src/components/earnings/` directory
+  - [x] 5.2 Create `EarningsCalendar.tsx` table component with columns:
     - Company Name
     - Ticker
     - Next Earnings Date (formatted as "Oct 28, 2025")
-  - [ ] 5.3 Sort companies by nextEarningsDate (soonest first)
-  - [ ] 5.4 Only show future earnings dates (filter out past dates)
-  - [ ] 5.5 Add navigation link in Sidebar for "Earnings Calendar"
-  - [ ] 5.6 Create route in App.tsx for `/earnings` that renders EarningsCalendar
-  - [ ] 5.7 Style table using the same patterns as DataGrid (bg-surface-dark, hover states, etc.)
-  - [ ] 5.8 Write unit tests for EarningsCalendar component
+  - [x] 5.3 Sort companies by nextEarningsDate (soonest first)
+  - [x] 5.4 Only show future earnings dates (filter out past dates)
+  - [x] 5.5 Add navigation link in Sidebar for "Earnings Calendar"
+  - [x] 5.6 Create route in App.tsx for `/earnings` that renders EarningsCalendar
+  - [x] 5.7 Style table using the same patterns as DataGrid (bg-surface-dark, hover states, etc.)
+  - [x] 5.8 Write unit tests for EarningsCalendar component
 
-- [ ] 6.0 Add Theme Switching
-  - [ ] 6.1 Create `src/context/ThemeContext.tsx` with:
-    - State: 'dark' | 'light' (default: 'dark')
-    - Toggle function
-    - Load initial value from localStorage
-  - [ ] 6.2 Create `src/hooks/useTheme.ts` as a convenience hook for the context
-  - [ ] 6.3 Update Sidebar to include theme toggle button in footer:
-    - Dark mode: show "Day Mode" with `light_mode` icon
-    - Light mode: show "Night Mode" with `dark_mode` icon
-  - [ ] 6.4 Update index.html to read theme from localStorage and apply `dark` class on <html> element
-  - [ ] 6.5 Persist theme preference to localStorage when toggled
-  - [ ] 6.6 Define light mode color overrides in Tailwind config or custom CSS:
-    - background-light: `#f6f6f8`
-    - Adjust surface and text colors for light mode
-  - [ ] 6.7 Test theme toggle maintains state across page reloads
-  - [ ] 6.8 Write unit tests for useTheme hook
-
-- [ ] 7.0 Mobile Responsiveness & Polish
-  - [ ] 7.1 Implement collapsible sidebar for mobile (< 768px):
-    - Add hamburger menu button in top-left
-    - Sidebar slides in as overlay when hamburger is clicked
-    - Close button or click-outside to dismiss
-  - [ ] 7.2 Ensure DataGrid scrolls horizontally on mobile while columns remain readable
-  - [ ] 7.3 Stack header elements vertically on mobile (title above, dropdowns below)
-  - [ ] 7.4 Test on iPad viewport (768px-1024px) - sidebar should be visible
-  - [ ] 7.5 Test on iPhone viewport (320px-428px) - sidebar should collapse
   - [ ] 7.6 Add loading state while data.json is being loaded
   - [ ] 7.7 Add error boundary or error message if data.json fails to load
   - [ ] 7.8 Run Lighthouse audit and address any accessibility issues (target: >90)
