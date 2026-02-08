@@ -1,73 +1,70 @@
-# React + TypeScript + Vite
+# Gold & Silver Mining Financial Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive financial dashboard designed to track and compare quarterly financial reports for gold and silver mining companies. This application allows investors and analysts to visualize key metrics, track earnings dates, and analyze performance trends over time.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Financial Data Grid**: View and compare key metrics like Market Cap, Revenue, EPS, Profit Margins, FCF, and Debt.
+-   **Interactive Charts**: Visualize trends over multiple quarters with dynamic line charts.
+-   **Earnings Calendar**: Track upcoming earnings release dates for major mining companies.
+-   **Company Filtering**: Customize the dashboard by selecting specific companies to view and compare.
+-   **Dark/Light Mode**: Fully responsive design with theme support for comfortable viewing in any environment.
+-   **Responsive Design**: Optimized for Desktop, iPad, and iPhone.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-   **Framework**: [React 19](https://react.dev/)
+-   **Language**: [TypeScript](https://www.typescriptlang.org/)
+-   **Build Tool**: [Vite](https://vitejs.dev/)
+-   **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+-   **Charting**: [Recharts](https://recharts.org/)
+-   **Routing**: [React Router 6](https://reactrouter.com/)
+-   **Icons**: [Lucide React](https://lucide.dev/)
 
-## Expanding the ESLint configuration
+## 📦 Installation & Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1.  **Clone the repository**
+    ```bash
+    git clone <repository-url>
+    cd MinerStocks
+    ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3.  **Run the development server**
+    ```bash
+    npm run dev
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+4.  **Build for production**
+    ```bash
+    npm run build
+    ```
+
+## 📂 Project Structure
+
+```
+src/
+├── components/
+│   ├── charts/       # Recharts visualizations
+│   ├── dashboard/    # Main dashboard components
+│   ├── earnings/     # Earnings calendar components
+│   ├── layout/       # Sidebar, Header, and Main Layout
+│   └── ui/           # Reusable UI components (Buttons, Cards, etc.)
+├── context/          # React Context for Theme and Filters
+├── data/             # Static data (companies, financials)
+├── hooks/            # Custom React hooks
+├── types/            # TypeScript type definitions
+└── App.tsx           # Main application entry
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📝 Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+-   `npm run dev`: Start the development server.
+-   `npm run build`: Type-check and build the project for production.
+-   `npm run preview`: Preview the production build locally.
+-   `npm run lint`: Run ESLint to check code quality.
+-   `npm test`: Run tests using Vitest.
