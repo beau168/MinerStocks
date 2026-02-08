@@ -98,8 +98,8 @@ export const EarningsCalendar: React.FC = () => {
                                 </td>
                                 <td className="py-4 px-6 text-sm text-right">
                                     <span className={`px-2 py-1 rounded text-xs font-medium ${getDaysUntil(company.nextEarningsDate) === 'Passed'
-                                        ? 'bg-gray-200 dark:bg-surface-darker text-slate-500 dark:text-text-secondary'
-                                        : 'bg-blue-100 dark:bg-primary/20 text-blue-700 dark:text-primary'
+                                        ? 'bg-green-100 dark:bg-accent-green/20 text-green-700 dark:text-accent-green'
+                                        : 'bg-yellow-100 dark:bg-accent-gold/20 text-yellow-700 dark:text-accent-gold'
                                         }`}>
                                         {getDaysUntil(company.nextEarningsDate)}
                                     </span>

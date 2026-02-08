@@ -36,15 +36,15 @@ export const DataGrid: React.FC<DataGridProps> = ({ selectedQuarter }) => {
     );
 
     // Formatters
-    const formatCurrency = (val: number | null) => {
-        if (val === null) return '-';
+    const formatCurrency = (val: number | null | undefined) => {
+        if (val === null || val === undefined) return '-';
         if (val >= 1e9) return `$${(val / 1e9).toFixed(1)}B`;
         if (val >= 1e6) return `$${(val / 1e6).toFixed(0)}M`;
         return `$${val.toLocaleString()}`;
     };
 
-    const formatPercent = (val: number | null, isChange = false) => {
-        if (val === null) return '-';
+    const formatPercent = (val: number | null | undefined, isChange = false) => {
+        if (val === null || val === undefined) return '-';
         const sign = isChange && val > 0 ? '+' : '';
         return `${sign}${val.toFixed(1)}%`;
     };
@@ -64,7 +64,9 @@ export const DataGrid: React.FC<DataGridProps> = ({ selectedQuarter }) => {
                         <tr className="bg-gray-100 dark:bg-surface-darker/50 border-b border-gray-200 dark:border-border-dark relative z-10">
                             <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap w-16 text-center">Rank</th>
                             <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap">Company</th>
-                            <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap text-right">Market Cap</th>
+                            <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap text-right relative z-40">
+                                <Tooltip text="Current Market Cap">Market Cap</Tooltip>
+                            </th>
                             <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap text-right">Revenue</th>
                             <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap text-right relative z-40">
                                 <Tooltip text="Earnings Per Share (EPS)">EPS</Tooltip>
@@ -79,7 +81,9 @@ export const DataGrid: React.FC<DataGridProps> = ({ selectedQuarter }) => {
                             <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap text-right relative z-40">
                                 <Tooltip text="Year-Over-Year (YoY)">YoY</Tooltip>
                             </th>
-                            <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap text-right">Debt</th>
+                            <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap text-right relative z-40">
+                                <Tooltip text="Current Debt">Debt</Tooltip>
+                            </th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200 dark:divide-border-dark">
@@ -105,7 +109,7 @@ export const DataGrid: React.FC<DataGridProps> = ({ selectedQuarter }) => {
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="py-4 px-6 text-sm text-slate-600 dark:text-text-bright text-right">{formatCurrency(row.marketCap)}</td>
+                                    <td className="py-4 px-6 text-sm text-slate-600 dark:text-text-bright text-right">{formatCurrency(row.marketCap ?? company.marketCap)}</td>
                                     <td className="py-4 px-6 text-sm text-slate-600 dark:text-text-bright text-right">{formatCurrency(row.revenue)}</td>
                                     <td className="py-4 px-6 text-sm text-slate-900 dark:text-white text-right">
                                         {row.eps !== null ? `$${row.eps.toFixed(2)}` : '-'}
@@ -114,7 +118,7 @@ export const DataGrid: React.FC<DataGridProps> = ({ selectedQuarter }) => {
                                     <td className="py-4 px-6 text-sm text-slate-600 dark:text-text-bright text-right">{formatCurrency(row.fcf)}</td>
                                     <td className={`py-4 px-6 text-sm text-right ${getChangeColor(row.qoq)}`}>{formatPercent(row.qoq, true)}</td>
                                     <td className={`py-4 px-6 text-sm text-right ${getChangeColor(row.yoy)}`}>{formatPercent(row.yoy, true)}</td>
-                                    <td className="py-4 px-6 text-sm text-slate-600 dark:text-text-bright text-right">{formatCurrency(row.debt)}</td>
+                                    <td className="py-4 px-6 text-sm text-slate-600 dark:text-text-bright text-right">{formatCurrency(row.debt ?? company.debt)}</td>
                                 </tr>
                             );
                         })}

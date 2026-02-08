@@ -13,7 +13,7 @@ describe('useCompanyData', () => {
         const { result } = renderHook(() => useCompanyData());
         await waitFor(() => expect(result.current.loading).toBe(false));
         const quarters = result.current.getAvailableQuarters();
-        expect(quarters).toHaveLength(5);
+        expect(quarters.length).toBeGreaterThan(20);
         expect(quarters).toContain('Q3 2025');
     });
 
@@ -33,13 +33,13 @@ describe('useCompanyData', () => {
         expect(data[0].companyId).toBeDefined();
     });
 
-    it('should get historical data for a company (5 quarters)', async () => {
+    it('should get historical data for a company', async () => {
         const { result } = renderHook(() => useCompanyData());
         await waitFor(() => expect(result.current.loading).toBe(false));
         const history = result.current.getHistoricalDataForCompany('nem');
-        expect(history).toHaveLength(5);
+        expect(history.length).toBeGreaterThan(20);
         // It's reversed in hook (Oldest -> Newest)
-        expect(history[0].quarter).toBe('Q4 2024');
-        expect(history[4].quarter).toBe('Q4 2025');
+        expect(history[0].quarter).toBe('Q1 2020');
+        expect(history[history.length - 1].quarter).toBe('Q4 2025');
     });
 });

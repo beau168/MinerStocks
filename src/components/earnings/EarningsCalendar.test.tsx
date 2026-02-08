@@ -12,6 +12,6 @@ describe('EarningsCalendar', () => {
         );
         expect(await screen.findByText('Newmont Corp')).toBeDefined();
         // Check for date format (Month DD, YYYY)
-        expect(screen.getByText('April 30, 2026')).toBeDefined(); // Agnico Eagle
+        expect(screen.getByText('February 12, 2026')).toBeDefined(); // Agnico Eagle
     });
 });

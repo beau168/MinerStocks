@@ -16,6 +16,8 @@ export interface Company {
     ticker: string;
     color: string;
     nextEarningsDate: string; // ISO date string YYYY-MM-DD
+    marketCap: number; // Current market cap
+    debt: number; // Current debt
     financials: CompanyFinancials[];
 }
 

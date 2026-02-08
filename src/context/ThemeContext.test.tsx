@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { ThemeProvider, useThemeContext } from './ThemeContext';
 
@@ -17,11 +17,15 @@ describe('ThemeContext', () => {
     beforeEach(() => {
         localStorage.clear();
         document.documentElement.classList.remove('dark');
+        // Mock Date to be evening (e.g., 20:00) so it defaults to 'dark'
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date(2024, 0, 1, 20, 0, 0));
     });
 
     afterEach(() => {
         localStorage.clear();
         document.documentElement.classList.remove('dark');
+        vi.useRealTimers();
     });
 
     it('defaults to dark theme', () => {

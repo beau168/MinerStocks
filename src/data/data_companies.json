@@ -1,0 +1,49 @@
+{
+    "companies": [
+        {
+            "id": "nem",
+            "name": "Newmont Corp",
+            "ticker": "NEM",
+            "color": "#fbbf24",
+            "nextEarningsDate": "2026-02-19",
+            "marketCap": 127840000000,
+            "debt": 5535000000
+        },
+        {
+            "id": "gold",
+            "name": "Barrick Gold",
+            "ticker": "GOLD",
+            "color": "#2563eb",
+            "nextEarningsDate": "2026-02-05",
+            "marketCap": 79920000000,
+            "debt": 4732000000
+        },
+        {
+            "id": "aem",
+            "name": "Agnico Eagle",
+            "ticker": "AEM",
+            "color": "#f87171",
+            "nextEarningsDate": "2026-02-12",
+            "marketCap": 98710000000,
+            "debt": 733690000
+        },
+        {
+            "id": "wpm",
+            "name": "Wheaton Precious Metals",
+            "ticker": "WPM",
+            "color": "#9333ea",
+            "nextEarningsDate": "2026-05-11",
+            "marketCap": 21000000000,
+            "debt": 450000000
+        },
+        {
+            "id": "fnv",
+            "name": "Franco-Nevada",
+            "ticker": "FNV",
+            "color": "#10b981",
+            "nextEarningsDate": "2026-03-10",
+            "marketCap": 44740000000,
+            "debt": 0
+        }
+    ]
+}
