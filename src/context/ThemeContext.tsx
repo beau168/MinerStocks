@@ -11,9 +11,14 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     // Default to dark
+    // Default to time-based theme if no saved preference
     const [theme, setTheme] = useState<Theme>(() => {
         const saved = localStorage.getItem('theme');
-        return (saved === 'light' || saved === 'dark') ? saved : 'dark';
+        if (saved === 'light' || saved === 'dark') {
+            return saved;
+        }
+        const hour = new Date().getHours();
+        return (hour >= 6 && hour < 18) ? 'light' : 'dark';
     });
 
     useEffect(() => {

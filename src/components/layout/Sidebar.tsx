@@ -24,7 +24,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ className = '', onClose }) => 
                         SA
                     </div>
                     <div className="flex flex-col">
-                        <h1 className="text-slate-900 dark:text-white text-base font-bold leading-normal tracking-wide">StockAnalytics</h1>
+                        <h1 className="text-slate-900 dark:text-white text-base font-bold leading-normal tracking-wide">Stock Analytics</h1>
                     </div>
                 </div>
                 {onClose && (

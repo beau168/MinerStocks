@@ -5,38 +5,98 @@
             "name": "Newmont Corp",
             "ticker": "NEM",
             "color": "#fbbf24",
-            "nextEarningsDate": "2025-10-28"
+            "nextEarningsDate": "2026-04-28"
         },
         {
             "id": "gold",
             "name": "Barrick Gold",
             "ticker": "GOLD",
             "color": "#2563eb",
-            "nextEarningsDate": "2025-11-04"
+            "nextEarningsDate": "2026-05-04"
         },
         {
             "id": "aem",
             "name": "Agnico Eagle",
             "ticker": "AEM",
             "color": "#64748b",
-            "nextEarningsDate": "2025-10-31"
+            "nextEarningsDate": "2026-04-30"
         },
         {
             "id": "wpm",
             "name": "Wheaton Precious",
             "ticker": "WPM",
             "color": "#9333ea",
-            "nextEarningsDate": "2025-11-10"
+            "nextEarningsDate": "2026-05-11"
         },
         {
             "id": "fnv",
             "name": "Franco-Nevada",
             "ticker": "FNV",
             "color": "#10b981",
-            "nextEarningsDate": "2025-11-12"
+            "nextEarningsDate": "2026-05-07"
         }
     ],
     "quarters": [
+        {
+            "quarter": "Q4 2025",
+            "data": [
+                {
+                    "companyId": "nem",
+                    "marketCap": 41200000000,
+                    "revenue": 11500000000,
+                    "eps": 1.72,
+                    "profitMargins": 15.1,
+                    "fcf": 480000000,
+                    "qoq": 2.7,
+                    "yoy": 14.5,
+                    "debt": 5300000000
+                },
+                {
+                    "companyId": "gold",
+                    "marketCap": 27500000000,
+                    "revenue": 11100000000,
+                    "eps": 0.95,
+                    "profitMargins": 8.8,
+                    "fcf": 330000000,
+                    "qoq": 2.8,
+                    "yoy": 6.5,
+                    "debt": 4100000000
+                },
+                {
+                    "companyId": "aem",
+                    "marketCap": 25200000000,
+                    "revenue": 6500000000,
+                    "eps": 2.25,
+                    "profitMargins": 34.5,
+                    "fcf": 135000000,
+                    "qoq": 4.8,
+                    "yoy": 19.2,
+                    "debt": 2000000000
+                },
+                {
+                    "companyId": "wpm",
+                    "marketCap": 21000000000,
+                    "revenue": 1150000000,
+                    "eps": 1.18,
+                    "profitMargins": 45.8,
+                    "fcf": 600000000,
+                    "qoq": 4.5,
+                    "yoy": 1.2,
+                    "debt": 450000000
+                },
+                {
+                    "companyId": "fnv",
+                    "marketCap": 21800000000,
+                    "revenue": 1350000000,
+                    "eps": 3.45,
+                    "profitMargins": 52.5,
+                    "fcf": 660000000,
+                    "qoq": 3.8,
+                    "yoy": 5.5,
+                    "debt": 180000000
+                }
+            ]
+        },
         {
             "quarter": "Q3 2025",
             "data": [

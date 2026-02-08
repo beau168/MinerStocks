@@ -65,7 +65,7 @@ export const TrendChart: React.FC<TrendChartProps> = ({ selectedMetric }) => {
         const masterQuarters = allHistories[0].history.map((h: any) => h.quarter);
 
         return masterQuarters.map((quarter: string) => {
-            const dataPoint: any = { name: quarter };
+            const dataPoint: any = { quarter }; // Fix: match XAxis dataKey="quarter"
 
             allHistories.forEach(({ id, history }) => {
                 const qData: any = history.find((h: any) => h.quarter === quarter);
@@ -141,7 +141,7 @@ export const TrendChart: React.FC<TrendChartProps> = ({ selectedMetric }) => {
                                 color: '#c4d1f5'
                             }}
                             itemStyle={{ color: '#c4d1f5' }}
-                            formatter={(value: any) => [formatYAxis(Number(value)), '']}
+                            formatter={(value: any, name: any) => [formatYAxis(Number(value)), name]}
                             labelStyle={{ color: '#fff', fontWeight: 'bold', marginBottom: '8px' }}
                         />
                         <Legend wrapperStyle={{ paddingTop: '20px' }} />

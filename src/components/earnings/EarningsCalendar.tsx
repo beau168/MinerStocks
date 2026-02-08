@@ -2,8 +2,13 @@ import React, { useMemo } from 'react';
 import { useCompanyData } from '../../hooks/useCompanyData';
 import { Card } from '../ui/Card';
 import { PageHeader } from '../layout/PageHeader';
+import { useSEO } from '../../hooks/useSEO';
 
 export const EarningsCalendar: React.FC = () => {
+    useSEO({
+        title: 'Earnings Calendar - Stock Analytics',
+        description: 'Upcoming earnings reports and dates for mining companies.'
+    });
     const { companies, loading, error } = useCompanyData();
 
     // Filter relevant earnings dates and sort

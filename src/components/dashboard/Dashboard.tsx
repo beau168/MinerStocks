@@ -5,8 +5,13 @@ import { DataGrid } from './DataGrid';
 import { useCompanyData } from '../../hooks/useCompanyData';
 import { TrendChart } from '../charts/TrendChart';
 import { MetricSelector, type MetricType } from '../charts/MetricSelector';
+import { useSEO } from '../../hooks/useSEO';
 
 export const Dashboard: React.FC = () => {
+    useSEO({
+        title: 'Market Overview - Stock Analytics',
+        description: 'Real-time financial dashboard tracking top gold and silver mining stocks.'
+    });
     const { getAvailableQuarters, loading, error } = useCompanyData();
     const [selectedQuarter, setSelectedQuarter] = useState<string>('');
     const [selectedMetric, setSelectedMetric] = useState<MetricType>('revenue');

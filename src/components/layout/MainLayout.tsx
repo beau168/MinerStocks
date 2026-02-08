@@ -27,7 +27,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                         <div className="w-8 h-8 bg-gradient-to-br from-accent-gold to-yellow-600 rounded-lg flex items-center justify-center text-surface-darker font-bold">
                             SA
                         </div>
-                        <h1 className="text-slate-900 dark:text-white text-base font-bold leading-normal tracking-wide">StockAnalytics</h1>
+                        <h1 className="text-slate-900 dark:text-white text-base font-bold leading-normal tracking-wide">Stock Analytics</h1>
                     </div>
                     <button
                         onClick={() => setIsMobileMenuOpen(true)}
