@@ -1,13 +1,13 @@
 export interface CompanyFinancials {
     quarter: string;
-    marketCap: number; // in USD
-    revenue: number; // in USD
-    eps: number;
-    profitMargins: number; // percentage
-    fcf: number; // in USD
-    qoq: number; // percentage
-    yoy: number; // percentage
-    debt: number; // in USD
+    marketCap: number | null; // in USD
+    revenue: number | null; // in USD
+    eps: number | null;
+    profitMargins: number | null; // percentage
+    fcf: number | null; // in USD
+    qoq: number | null; // percentage
+    yoy: number | null; // percentage
+    debt: number | null; // in USD
 }
 
 export interface Company {

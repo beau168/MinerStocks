@@ -79,7 +79,8 @@ export const TrendChart: React.FC<TrendChartProps> = ({ selectedMetric }) => {
 
     }, [companies, isCompanyVisible, selectedMetric, getHistoricalDataForCompany]);
 
-    const formatYAxis = (val: number) => {
+    const formatYAxis = (val: number | null | undefined) => {
+        if (val === null || val === undefined) return '-';
         if (selectedMetric === 'profitMargins') return `${val}%`;
         if (selectedMetric === 'eps') return `$${val}`;
 
@@ -141,7 +142,7 @@ export const TrendChart: React.FC<TrendChartProps> = ({ selectedMetric }) => {
                                 color: '#c4d1f5'
                             }}
                             itemStyle={{ color: '#c4d1f5' }}
-                            formatter={(value: any, name: any) => [formatYAxis(Number(value)), name]}
+                            formatter={(value: any, name: any) => [formatYAxis(value), name]}
                             labelStyle={{ color: '#fff', fontWeight: 'bold', marginBottom: '8px' }}
                         />
                         <Legend wrapperStyle={{ paddingTop: '20px' }} />

@@ -19,12 +19,13 @@ export const DataGrid: React.FC<DataGridProps> = ({ selectedQuarter }) => {
     const itemsPerPage = 10;
 
     // Filter AND Sort data
+    // Filter AND Sort data
     const processedData = useMemo(() => {
         // 1. Filter visible companies
         const filtered = rawData.filter(d => isCompanyVisible(d.companyId));
 
         // 2. Sort by Market Cap (Descending)
-        return filtered.sort((a, b) => b.marketCap - a.marketCap);
+        return filtered.sort((a, b) => (b.marketCap || 0) - (a.marketCap || 0));
     }, [rawData, isCompanyVisible]);
 
     // Pagination logic
@@ -35,18 +36,21 @@ export const DataGrid: React.FC<DataGridProps> = ({ selectedQuarter }) => {
     );
 
     // Formatters
-    const formatCurrency = (val: number) => {
+    const formatCurrency = (val: number | null) => {
+        if (val === null) return '-';
         if (val >= 1e9) return `$${(val / 1e9).toFixed(1)}B`;
         if (val >= 1e6) return `$${(val / 1e6).toFixed(0)}M`;
         return `$${val.toLocaleString()}`;
     };
 
-    const formatPercent = (val: number, isChange = false) => {
+    const formatPercent = (val: number | null, isChange = false) => {
+        if (val === null) return '-';
         const sign = isChange && val > 0 ? '+' : '';
         return `${sign}${val.toFixed(1)}%`;
     };
 
-    const getChangeColor = (val: number) => {
+    const getChangeColor = (val: number | null) => {
+        if (val === null) return 'text-text-bright';
         if (val > 0) return 'text-accent-green';
         if (val < 0) return 'text-accent-red';
         return 'text-text-bright';
@@ -103,7 +107,9 @@ export const DataGrid: React.FC<DataGridProps> = ({ selectedQuarter }) => {
                                     </td>
                                     <td className="py-4 px-6 text-sm text-slate-600 dark:text-text-bright text-right">{formatCurrency(row.marketCap)}</td>
                                     <td className="py-4 px-6 text-sm text-slate-600 dark:text-text-bright text-right">{formatCurrency(row.revenue)}</td>
-                                    <td className="py-4 px-6 text-sm text-slate-900 dark:text-white text-right">${row.eps.toFixed(2)}</td>
+                                    <td className="py-4 px-6 text-sm text-slate-900 dark:text-white text-right">
+                                        {row.eps !== null ? `$${row.eps.toFixed(2)}` : '-'}
+                                    </td>
                                     <td className="py-4 px-6 text-sm text-slate-600 dark:text-text-bright text-right">{formatPercent(row.profitMargins)}</td>
                                     <td className="py-4 px-6 text-sm text-slate-600 dark:text-text-bright text-right">{formatCurrency(row.fcf)}</td>
                                     <td className={`py-4 px-6 text-sm text-right ${getChangeColor(row.qoq)}`}>{formatPercent(row.qoq, true)}</td>
