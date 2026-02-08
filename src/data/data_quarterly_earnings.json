@@ -2,10 +2,6 @@
     "companies": [
         {
             "id": "nem",
-            "name": "Newmont Corp",
-            "ticker": "NEM",
-            "color": "#fbbf24",
-            "nextEarningsDate": "2026-02-19",
             "financials": [
                 {
                     "quarter": "Q4 2025",
@@ -847,10 +843,6 @@
         },
         {
             "id": "gold",
-            "name": "Barrick Gold",
-            "ticker": "GOLD",
-            "color": "#2563eb",
-            "nextEarningsDate": "2026-05-04",
             "financials": [
                 {
                     "quarter": "Q4 2025",
@@ -911,10 +903,6 @@
         },
         {
             "id": "aem",
-            "name": "Agnico Eagle",
-            "ticker": "AEM",
-            "color": "#64748b",
-            "nextEarningsDate": "2026-04-30",
             "financials": [
                 {
                     "quarter": "Q4 2025",
@@ -975,10 +963,6 @@
         },
         {
             "id": "wpm",
-            "name": "Wheaton Precious",
-            "ticker": "WPM",
-            "color": "#9333ea",
-            "nextEarningsDate": "2026-05-11",
             "financials": [
                 {
                     "quarter": "Q4 2025",
@@ -1039,10 +1023,6 @@
         },
         {
             "id": "fnv",
-            "name": "Franco-Nevada",
-            "ticker": "FNV",
-            "color": "#10b981",
-            "nextEarningsDate": "2026-05-07",
             "financials": [
                 {
                     "quarter": "Q4 2025",

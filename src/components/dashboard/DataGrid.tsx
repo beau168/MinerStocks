@@ -64,7 +64,9 @@ export const DataGrid: React.FC<DataGridProps> = ({ selectedQuarter }) => {
                         <tr className="bg-gray-100 dark:bg-surface-darker/50 border-b border-gray-200 dark:border-border-dark relative z-10">
                             <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap w-16 text-center">Rank</th>
                             <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap">Company</th>
-                            <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap text-right">Market Cap</th>
+                            <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap text-right relative z-40">
+                                <Tooltip text="Current Market Cap">Market Cap</Tooltip>
+                            </th>
                             <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap text-right">Revenue</th>
                             <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap text-right relative z-40">
                                 <Tooltip text="Earnings Per Share (EPS)">EPS</Tooltip>
@@ -79,7 +81,9 @@ export const DataGrid: React.FC<DataGridProps> = ({ selectedQuarter }) => {
                             <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap text-right relative z-40">
                                 <Tooltip text="Year-Over-Year (YoY)">YoY</Tooltip>
                             </th>
-                            <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap text-right">Debt</th>
+                            <th className="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-text-bright whitespace-nowrap text-right relative z-40">
+                                <Tooltip text="Current Debt">Debt</Tooltip>
+                            </th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200 dark:divide-border-dark">

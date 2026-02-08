@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import rawData from '../data/data.json';
+import companyMetadata from '../data/data_companies.json';
+import quarterlyEarnings from '../data/data_quarterly_earnings.json';
 import type { Company, FinancialData, QuarterData } from '../types';
 
 // Simulate a singleton cache to avoid multiple "fetches" in different components
@@ -36,7 +37,15 @@ export const useCompanyData = () => {
                 // Simulate network request duration
                 await new Promise(resolve => setTimeout(resolve, 800));
 
-                cachedData = rawData as unknown as FinancialData;
+                const mergedCompanies = companyMetadata.companies.map(meta => {
+                    const financials = quarterlyEarnings.companies.find(f => f.id === meta.id)?.financials || [];
+                    return {
+                        ...meta,
+                        financials
+                    } as Company;
+                });
+
+                cachedData = { companies: mergedCompanies };
                 setData(cachedData);
                 setLoading(false);
             } catch (err) {
