@@ -14,7 +14,7 @@
             "name": "Barrick Gold",
             "ticker": "GOLD",
             "color": "#2563eb",
-            "nextEarningsDate": "2026-02-05",
+            "nextEarningsDate": "2026-02-12",
             "marketCap": 79920000000,
             "debt": 4732000000
         },
@@ -24,7 +24,7 @@
             "ticker": "AEM",
             "color": "#f87171",
             "nextEarningsDate": "2026-02-12",
-            "marketCap": 98710000000,
+            "marketCap": 135110000000,
             "debt": 733690000
         },
         {
@@ -33,7 +33,7 @@
             "ticker": "WPM",
             "color": "#9333ea",
             "nextEarningsDate": "2026-05-11",
-            "marketCap": 21000000000,
+            "marketCap": 63670000000,
             "debt": 450000000
         },
         {
@@ -60,7 +60,7 @@
             "ticker": "EQX",
             "color": "#16a34a",
             "nextEarningsDate": "2026-02-18",
-            "marketCap": 11440000000,
+            "marketCap": 11230000000,
             "debt": 580000000
         },
         {
@@ -69,7 +69,7 @@
             "ticker": "KGC",
             "color": "#dc2626",
             "nextEarningsDate": "2026-02-18",
-            "marketCap": 40200000000,
+            "marketCap": 38500000000,
             "debt": 2520000000
         },
         {
@@ -78,7 +78,7 @@
             "ticker": "GFI",
             "color": "#f97316",
             "nextEarningsDate": "2026-02-19",
-            "marketCap": 47900000000,
+            "marketCap": 47030000000,
             "debt": 1100000000
         },
         {
