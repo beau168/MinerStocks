@@ -101,10 +101,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ className = '', onClose }) => 
                         className="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-text-secondary hover:bg-gray-100 dark:hover:bg-surface-dark hover:text-slate-900 dark:hover:text-white transition-colors w-full text-left"
                     >
                         <span className="material-symbols-outlined">
-                            {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+                            {theme === 'dark' ? 'dark_mode' : 'light_mode'}
                         </span>
                         <p className="text-sm font-medium">
-                            {theme === 'dark' ? 'Day Mode' : 'Night Mode'}
+                            {theme === 'dark' ? 'Night Mode' : 'Day Mode'}
                         </p>
                     </button>
                 </div>

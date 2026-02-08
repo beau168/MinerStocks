@@ -164,11 +164,11 @@ Update the file after completing each sub-task, not just after completing an ent
   - [x] 5.7 Style table using the same patterns as DataGrid (bg-surface-dark, hover states, etc.)
   - [x] 5.8 Write unit tests for EarningsCalendar component
 
-  - [ ] 7.6 Add loading state while data.json is being loaded
-  - [ ] 7.7 Add error boundary or error message if data.json fails to load
-  - [ ] 7.8 Run Lighthouse audit and address any accessibility issues (target: >90)
-  - [ ] 7.9 Final visual polish: ensure all hover states, transitions, and animations match MarketOverview.tsx
-  - [ ] 7.10 Clean up MarketOverview.tsx (can be deleted or kept as reference)
+  - [x] 7.6 Add loading state while data.json is being loaded
+  - [x] 7.7 Add error boundary or error message if data.json fails to load
+  - [x] 7.8 Run Lighthouse audit and address any accessibility issues (target: >90)
+  - [x] 7.9 Final visual polish: ensure all hover states, transitions, and animations match MarketOverview.tsx
+  - [x] 7.10 Clean up MarketOverview.tsx (can be deleted or kept as reference)
 
 ---
 
@@ -176,15 +176,15 @@ Update the file after completing each sub-task, not just after completing an ent
 
 Before marking the feature as complete, verify:
 
-- [ ] All tasks above are checked off
-- [ ] Application runs without errors: `npm run dev`
-- [ ] All tests pass: `npm run test`
-- [ ] Dark mode and light mode both work correctly
-- [ ] Theme persists across page reloads
-- [ ] Dashboard displays all 10 columns correctly
-- [ ] Company filter checkboxes work in sidebar
-- [ ] Quarter selector updates both grid and chart
-- [ ] Chart displays lines for all visible companies
-- [ ] Earnings Calendar shows upcoming dates, sorted correctly
-- [ ] Application is responsive on iPad and iPhone
-- [ ] Lighthouse accessibility score > 90
+- [x] All tasks above are checked off
+- [x] Application runs without errors: `npm run dev`
+- [x] All tests pass: `npm run test`
+- [x] Dark mode and light mode both work correctly
+- [x] Theme persists across page reloads
+- [x] Dashboard displays all 10 columns correctly
+- [x] Company filter checkboxes work in sidebar
+- [x] Quarter selector updates both grid and chart
+- [x] Chart displays lines for all visible companies
+- [x] Earnings Calendar shows upcoming dates, sorted correctly
+- [x] Application is responsive on iPad and iPhone
+- [x] Lighthouse accessibility score > 90

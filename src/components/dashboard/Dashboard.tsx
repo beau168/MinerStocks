@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PageHeader } from '../layout/PageHeader';
 import { QuarterSelector } from './QuarterSelector';
 import { DataGrid } from './DataGrid';
@@ -7,10 +7,34 @@ import { TrendChart } from '../charts/TrendChart';
 import { MetricSelector, type MetricType } from '../charts/MetricSelector';
 
 export const Dashboard: React.FC = () => {
-    const { getAvailableQuarters } = useCompanyData();
-    const quarters = getAvailableQuarters();
-    const [selectedQuarter, setSelectedQuarter] = useState(quarters[0] || 'Q3 2025');
+    const { getAvailableQuarters, loading, error } = useCompanyData();
+    const [selectedQuarter, setSelectedQuarter] = useState<string>('');
     const [selectedMetric, setSelectedMetric] = useState<MetricType>('revenue');
+
+    const quarters = getAvailableQuarters();
+
+    // Set default selected quarter when data loads
+    useEffect(() => {
+        if (quarters.length > 0 && !selectedQuarter) {
+            setSelectedQuarter(quarters[0]);
+        }
+    }, [quarters, selectedQuarter]);
+
+    if (loading) {
+        return (
+            <div className="flex h-64 items-center justify-center">
+                <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent"></div>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="flex h-64 items-center justify-center text-accent-red">
+                <p>{error}</p>
+            </div>
+        );
+    }
 
     return (
         <div className="flex flex-col gap-8">

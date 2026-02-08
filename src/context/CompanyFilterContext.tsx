@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { useCompanyData } from '../hooks/useCompanyData';
 
 interface CompanyFilterContextType {
@@ -20,7 +20,7 @@ export const CompanyFilterProvider: React.FC<{ children: React.ReactNode }> = ({
         }
     }, [companies]);
 
-    const toggleCompany = (id: string) => {
+    const toggleCompany = useCallback((id: string) => {
         setVisibleCompanyIds(prev => {
             if (prev.includes(id)) {
                 return prev.filter(cId => cId !== id);
@@ -28,9 +28,9 @@ export const CompanyFilterProvider: React.FC<{ children: React.ReactNode }> = ({
                 return [...prev, id];
             }
         });
-    };
+    }, []);
 
-    const isCompanyVisible = (id: string) => visibleCompanyIds.includes(id);
+    const isCompanyVisible = useCallback((id: string) => visibleCompanyIds.includes(id), [visibleCompanyIds]);
 
     return (
         <CompanyFilterContext.Provider value={{ visibleCompanyIds, toggleCompany, isCompanyVisible }}>

@@ -19,7 +19,7 @@ interface TrendChartProps {
 }
 
 export const TrendChart: React.FC<TrendChartProps> = ({ selectedMetric }) => {
-    const { companies, getHistoricalDataForCompany } = useCompanyData();
+    const { companies, getHistoricalDataForCompany, loading } = useCompanyData();
     const { isCompanyVisible } = useCompanyFilter();
 
     // Transform data for Recharts
@@ -27,23 +27,56 @@ export const TrendChart: React.FC<TrendChartProps> = ({ selectedMetric }) => {
         const visibleCompanies = companies.filter(c => isCompanyVisible(c.id));
         if (visibleCompanies.length === 0) return [];
 
-        // Get quarters from the first visible company's history
-        const firstCompanyHistory = getHistoricalDataForCompany(visibleCompanies[0].id);
+        // 1. Collect all unique quarters from the available quarters list
+        // We use the Hook's helper to get all quarters, instead of relying on just the first company
+        // However, the hook isn't directly exposing quarters list in getHistoricalData, so we can use the 'quarters' prop from useCompanyData or just map it differently.
+        // Let's rely on the fact that useCompanyData exposes 'quarters' which is the raw data
+        // But better yet, let's just use the helper we already have:
+        // We need a list of all quarters to form the X-axis.
+        // Let's assume all companies share the same quarters for this chart, or we take the union.
 
-        return firstCompanyHistory.map((h: any) => {
-            const dataPoint: any = { name: h.quarter }; // Recharts often likes date/name key
+        // Let's simply iterate through the 'quarters' from the hook (which we can get from useCompanyData)
+        // Check useCompanyData signature... it returns `quarters` (the raw list).
 
-            visibleCompanies.forEach((c: any) => { // explicit any to avoid TS issues for now
-                const history = getHistoricalDataForCompany(c.id);
-                const qData: any = history.find((d: any) => d.quarter === h.quarter);
+        // Wait, I need to get `quarters` from `useCompanyData` in the component first.
+        // I'll add `quarters` to the destructuring in the component on line 22
+
+        // Actually, let's just stick to the pattern of getHistoricalDataForCompany but lets serve the quarters from the schema.
+        // The issue might be that `getHistoricalDataForCompany` returns reversed data, and if companies have different lengths, it might mismatch.
+        // But our data.json has consistent quarters for now. 
+
+        // Let's try to map from the global quarters list to ensure order.
+        // We need to access the raw quarters list. 
+        // Let's modify the TrendChart component to destructure `quarters` from `useCompanyData`.
+
+        // For now, let's improve the existing logic to be safer:
+        // Collect all data first
+        const allHistories = visibleCompanies.map(c => ({
+            id: c.id,
+            history: getHistoricalDataForCompany(c.id)
+        }));
+
+        // Flatten all quarters to find unique ones, order them (assuming they are strings like "Q3 2025", we might need better sorting if they are mixed, but let's trust the data order for now)
+        // Actually the history is already returned in order (Old -> New) from `getHistoricalDataForCompany`
+
+        if (allHistories.length === 0 || allHistories[0].history.length === 0) return [];
+
+        // Use the first company's quarters as the "master" list of X-axis points
+        const masterQuarters = allHistories[0].history.map((h: any) => h.quarter);
+
+        return masterQuarters.map((quarter: string) => {
+            const dataPoint: any = { name: quarter };
+
+            allHistories.forEach(({ id, history }) => {
+                const qData: any = history.find((h: any) => h.quarter === quarter);
                 if (qData) {
-                    // Start of workaround: Recharts needs a flat object
-                    // We dynamically assign the company ID as the key for its metric value
-                    dataPoint[c.id] = qData[selectedMetric];
+                    dataPoint[id] = qData[selectedMetric];
                 }
             });
+
             return dataPoint;
         });
+
     }, [companies, isCompanyVisible, selectedMetric, getHistoricalDataForCompany]);
 
     const formatYAxis = (val: number) => {
@@ -66,10 +99,18 @@ export const TrendChart: React.FC<TrendChartProps> = ({ selectedMetric }) => {
         }
     };
 
+    if (loading) {
+        return (
+            <Card className="h-96 flex items-center justify-center">
+                <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent"></div>
+            </Card>
+        );
+    }
+
     if (chartData.length === 0) {
         return (
             <Card className="h-96 flex items-center justify-center text-text-secondary">
-                No companies selected.
+                {companies.length > 0 ? "Select companies to view trends." : "No data available."}
             </Card>
         );
     }

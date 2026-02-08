@@ -4,7 +4,7 @@ import { Card } from '../ui/Card';
 import { PageHeader } from '../layout/PageHeader';
 
 export const EarningsCalendar: React.FC = () => {
-    const { companies } = useCompanyData();
+    const { companies, loading, error } = useCompanyData();
 
     // Filter relevant earnings dates and sort
     const earningsData = useMemo(() => {
@@ -39,6 +39,22 @@ export const EarningsCalendar: React.FC = () => {
         if (diffDays === 0) return 'Today';
         return `in ${diffDays} days`;
     };
+
+    if (loading) {
+        return (
+            <div className="flex h-64 items-center justify-center">
+                <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent"></div>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="flex h-64 items-center justify-center text-accent-red">
+                <p>{error}</p>
+            </div>
+        );
+    }
 
     return (
         <div className="flex flex-col gap-8">
@@ -77,8 +93,8 @@ export const EarningsCalendar: React.FC = () => {
                                 </td>
                                 <td className="py-4 px-6 text-sm text-right">
                                     <span className={`px-2 py-1 rounded text-xs font-medium ${getDaysUntil(company.nextEarningsDate) === 'Passed'
-                                            ? 'bg-gray-200 dark:bg-surface-darker text-slate-500 dark:text-text-secondary'
-                                            : 'bg-blue-100 dark:bg-primary/20 text-blue-700 dark:text-primary'
+                                        ? 'bg-gray-200 dark:bg-surface-darker text-slate-500 dark:text-text-secondary'
+                                        : 'bg-blue-100 dark:bg-primary/20 text-blue-700 dark:text-primary'
                                         }`}>
                                         {getDaysUntil(company.nextEarningsDate)}
                                     </span>

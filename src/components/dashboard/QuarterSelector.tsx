@@ -13,7 +13,7 @@ export const QuarterSelector: React.FC<QuarterSelectorProps> = ({ selectedQuarte
 
     return (
         <div className="relative w-48">
-            <Select value={selectedQuarter} onChange={(e) => onChange(e.target.value)}>
+            <Select aria-label="Select Quarter" value={selectedQuarter} onChange={(e) => onChange(e.target.value)}>
                 {quarters.map(q => (
                     <option key={q} value={q}>{q}</option>
                 ))}

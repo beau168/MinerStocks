@@ -12,6 +12,7 @@ export const MetricSelector: React.FC<MetricSelectorProps> = ({ selectedMetric, 
     return (
         <div className="relative w-48">
             <Select
+                aria-label="Select Metric"
                 value={selectedMetric}
                 onChange={(e: ChangeEvent<HTMLSelectElement>) => onChange(e.target.value as MetricType)}
             >
