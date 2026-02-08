@@ -4,14 +4,14 @@ import { EarningsCalendar } from './EarningsCalendar';
 import { CompanyFilterProvider } from '../../context/CompanyFilterContext';
 
 describe('EarningsCalendar', () => {
-    it('renders company earnings', () => {
+    it('renders company earnings', async () => {
         render(
             <CompanyFilterProvider>
                 <EarningsCalendar />
             </CompanyFilterProvider>
         );
-        expect(screen.getByText('Newmont Corp')).toBeDefined();
+        expect(await screen.findByText('Newmont Corp')).toBeDefined();
         // Check for date format (Month DD, YYYY)
-        expect(screen.getByText('October 31, 2025')).toBeDefined(); // Agnico Eagle
+        expect(screen.getByText('April 30, 2026')).toBeDefined(); // Agnico Eagle
     });
 });

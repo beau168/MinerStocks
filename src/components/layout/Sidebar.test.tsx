@@ -20,7 +20,7 @@ describe('Sidebar', () => {
         expect(screen.getByText('Earnings Calendar')).toBeDefined();
     });
 
-    it('renders company checkboxes', () => {
+    it('renders company checkboxes', async () => {
         render(
             <BrowserRouter>
                 <ThemeProvider>
@@ -31,7 +31,7 @@ describe('Sidebar', () => {
             </BrowserRouter>
         );
         // data.json has 5 companies
-        expect(screen.getByText('Newmont Corp')).toBeDefined();
+        expect(await screen.findByText('Newmont Corp')).toBeDefined();
         expect(screen.getByText('Barrick Gold')).toBeDefined();
     });
 });

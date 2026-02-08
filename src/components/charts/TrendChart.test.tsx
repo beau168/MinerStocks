@@ -4,13 +4,13 @@ import { TrendChart } from './TrendChart';
 import { CompanyFilterProvider } from '../../context/CompanyFilterContext';
 
 describe('TrendChart', () => {
-    it('renders without crashing', () => {
+    it('renders without crashing', async () => {
         render(
             <CompanyFilterProvider>
                 <TrendChart selectedMetric="revenue" />
             </CompanyFilterProvider>
         );
         // Should show legend or text
-        expect(screen.getByText('Revenue Trend')).toBeDefined();
+        expect(await screen.findByText('Revenue Trend')).toBeDefined();
     });
 });

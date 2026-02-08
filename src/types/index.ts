@@ -1,13 +1,5 @@
-export interface Company {
-    id: string;
-    name: string;
-    ticker: string;
-    color: string;
-    nextEarningsDate: string; // ISO date string YYYY-MM-DD
-}
-
-export interface QuarterData {
-    companyId: string;
+export interface CompanyFinancials {
+    quarter: string;
     marketCap: number; // in USD
     revenue: number; // in USD
     eps: number;
@@ -18,12 +10,20 @@ export interface QuarterData {
     debt: number; // in USD
 }
 
-export interface Quarter {
-    quarter: string; // e.g., "Q3 2025"
-    data: QuarterData[];
+export interface Company {
+    id: string;
+    name: string;
+    ticker: string;
+    color: string;
+    nextEarningsDate: string; // ISO date string YYYY-MM-DD
+    financials: CompanyFinancials[];
+}
+
+// Used for the DataGrid - synthesizes data with companyId
+export interface QuarterData extends CompanyFinancials {
+    companyId: string;
 }
 
 export interface FinancialData {
     companies: Company[];
-    quarters: Quarter[];
 }

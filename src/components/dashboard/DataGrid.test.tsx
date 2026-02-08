@@ -15,12 +15,12 @@ describe('DataGrid', () => {
         expect(screen.getByText('Market Cap')).toBeDefined();
     });
 
-    it('renders company rows', () => {
+    it('renders company rows', async () => {
         render(
             <CompanyFilterProvider>
                 <DataGrid selectedQuarter="Q3 2025" />
             </CompanyFilterProvider>
         );
-        expect(screen.getByText('Newmont Corp')).toBeDefined();
+        expect(await screen.findByText('Newmont Corp')).toBeDefined();
     });
 });
