@@ -1152,6 +1152,1111 @@
                     "yoy": 33.9
                 }
             ]
+        },
+        {
+            "id": "paas",
+            "financials": [
+                {
+                    "quarter": "Q4 2025",
+                    "revenue": null,
+                    "eps": null,
+                    "profitMargins": null,
+                    "fcf": null,
+                    "qoq": null,
+                    "yoy": null
+                },
+                {
+                    "quarter": "Q3 2025",
+                    "revenue": 854600000,
+                    "eps": 0.48,
+                    "profitMargins": 19.8,
+                    "fcf": 251700000,
+                    "qoq": 5.26,
+                    "yoy": 19.34
+                },
+                {
+                    "quarter": "Q2 2025",
+                    "revenue": 811900000,
+                    "eps": 0.43,
+                    "profitMargins": 20.3,
+                    "fcf": 150400000,
+                    "qoq": 5.0,
+                    "yoy": 18.3
+                },
+                {
+                    "quarter": "Q1 2025",
+                    "revenue": 773200000,
+                    "eps": 0.42,
+                    "profitMargins": 21.9,
+                    "fcf": 141900000,
+                    "qoq": -5.14,
+                    "yoy": 28.57
+                },
+                {
+                    "quarter": "Q4 2024",
+                    "revenue": 815100000,
+                    "eps": 0.29,
+                    "profitMargins": 13.0,
+                    "fcf": 196200000,
+                    "qoq": 13.8,
+                    "yoy": 21.64
+                },
+                {
+                    "quarter": "Q3 2024",
+                    "revenue": 716100000,
+                    "eps": 0.16,
+                    "profitMargins": 8.0,
+                    "fcf": 173400000,
+                    "qoq": 4.3,
+                    "yoy": 16.23
+                },
+                {
+                    "quarter": "Q2 2024",
+                    "revenue": 686300000,
+                    "eps": -0.06,
+                    "profitMargins": -3.0,
+                    "fcf": 79400000,
+                    "qoq": 14.1,
+                    "yoy": 7.19
+                },
+                {
+                    "quarter": "Q1 2024",
+                    "revenue": 601400000,
+                    "eps": -0.08,
+                    "profitMargins": -5.0,
+                    "fcf": -4600000,
+                    "qoq": -10.2,
+                    "yoy": 54.1
+                },
+                {
+                    "quarter": "Q4 2023",
+                    "revenue": 669600000,
+                    "eps": -0.26,
+                    "profitMargins": -8.0,
+                    "fcf": 128900000,
+                    "qoq": 8.6,
+                    "yoy": 78.67
+                },
+                {
+                    "quarter": "Q3 2023",
+                    "revenue": 616300000,
+                    "eps": -0.05,
+                    "profitMargins": -2.0,
+                    "fcf": 80100000,
+                    "qoq": -3.7,
+                    "yoy": 81.71
+                },
+                {
+                    "quarter": "Q2 2023",
+                    "revenue": 639900000,
+                    "eps": -0.09,
+                    "profitMargins": -3.0,
+                    "fcf": 45400000,
+                    "qoq": 63.9,
+                    "yoy": 87.68
+                },
+                {
+                    "quarter": "Q1 2023",
+                    "revenue": 390300000,
+                    "eps": 0.08,
+                    "profitMargins": 4.0,
+                    "fcf": -14400000,
+                    "qoq": 3.9,
+                    "yoy": -11.36
+                },
+                {
+                    "quarter": "Q4 2022",
+                    "revenue": 375500000,
+                    "eps": -0.81,
+                    "profitMargins": -46.0,
+                    "fcf": -112100000,
+                    "qoq": 10.8,
+                    "yoy": -11.14
+                },
+                {
+                    "quarter": "Q3 2022",
+                    "revenue": 338900000,
+                    "eps": -0.34,
+                    "profitMargins": -21.0,
+                    "fcf": -3600000,
+                    "qoq": -0.5,
+                    "yoy": -26.3
+                },
+                {
+                    "quarter": "Q2 2022",
+                    "revenue": 340500000,
+                    "eps": -0.83,
+                    "profitMargins": -51.0,
+                    "fcf": -6500000,
+                    "qoq": -22.6,
+                    "yoy": -10.73
+                },
+                {
+                    "quarter": "Q1 2022",
+                    "revenue": 439900000,
+                    "eps": 0.36,
+                    "profitMargins": 17.0,
+                    "fcf": 53500000,
+                    "qoq": 4.2,
+                    "yoy": 19.57
+                },
+                {
+                    "quarter": "Q4 2021",
+                    "revenue": 422200000,
+                    "eps": 0.06,
+                    "profitMargins": 3.0,
+                    "fcf": 93200000,
+                    "qoq": -8.3,
+                    "yoy": -1.86
+                },
+                {
+                    "quarter": "Q3 2021",
+                    "revenue": 460300000,
+                    "eps": 0.1,
+                    "profitMargins": 4.0,
+                    "fcf": 80100000,
+                    "qoq": 20.5,
+                    "yoy": 53.33
+                },
+                {
+                    "quarter": "Q2 2021",
+                    "revenue": 382100000,
+                    "eps": 0.34,
+                    "profitMargins": 19.0,
+                    "fcf": 55100000,
+                    "qoq": 3.8,
+                    "yoy": 52.8
+                },
+                {
+                    "quarter": "Q1 2021",
+                    "revenue": 368100000,
+                    "eps": -0.04,
+                    "profitMargins": -2.0,
+                    "fcf": 31300000,
+                    "qoq": -14.5,
+                    "yoy": 2.79
+                },
+                {
+                    "quarter": "Q4 2020",
+                    "revenue": 430500000,
+                    "eps": 0.81,
+                    "profitMargins": 40.0,
+                    "fcf": 135800000,
+                    "qoq": 43.3,
+                    "yoy": 6.44
+                },
+                {
+                    "quarter": "Q3 2020",
+                    "revenue": 300400000,
+                    "eps": 0.31,
+                    "profitMargins": 22.0,
+                    "fcf": 115000000,
+                    "qoq": 20.4,
+                    "yoy": -14.77
+                },
+                {
+                    "quarter": "Q2 2020",
+                    "revenue": 249500000,
+                    "eps": 0.1,
+                    "profitMargins": 8.0,
+                    "fcf": 30200000,
+                    "qoq": -30.4,
+                    "yoy": -26.47
+                },
+                {
+                    "quarter": "Q1 2020",
+                    "revenue": 358400000,
+                    "eps": -0.37,
+                    "profitMargins": -21.0,
+                    "fcf": 41800000,
+                    "qoq": -11.3,
+                    "yoy": 40.94
+                }
+            ]
+        },
+        {
+            "id": "eqx",
+            "financials": [
+                {
+                    "quarter": "Q4 2025",
+                    "revenue": null,
+                    "eps": null,
+                    "profitMargins": null,
+                    "fcf": null,
+                    "qoq": null,
+                    "yoy": null
+                },
+                {
+                    "quarter": "Q3 2025",
+                    "revenue": 819010000,
+                    "eps": 0.19,
+                    "profitMargins": 10.45,
+                    "fcf": 223000000,
+                    "qoq": 71.11,
+                    "yoy": 91.18
+                },
+                {
+                    "quarter": "Q2 2025",
+                    "revenue": 478640000,
+                    "eps": 0.11,
+                    "profitMargins": 8.2,
+                    "fcf": 28500000,
+                    "qoq": 12.96,
+                    "yoy": 78.07
+                },
+                {
+                    "quarter": "Q1 2025",
+                    "revenue": 423720000,
+                    "eps": -0.08,
+                    "profitMargins": -3.5,
+                    "fcf": 38800000,
+                    "qoq": -26.31,
+                    "yoy": 75.93
+                },
+                {
+                    "quarter": "Q4 2024",
+                    "revenue": 575000000,
+                    "eps": 0.12,
+                    "profitMargins": 4.9,
+                    "fcf": -784000000,
+                    "qoq": 34.35,
+                    "yoy": 92.95
+                },
+                {
+                    "quarter": "Q3 2024",
+                    "revenue": 428000000,
+                    "eps": 0.0,
+                    "profitMargins": 0.1,
+                    "fcf": 37000000,
+                    "qoq": 59.11,
+                    "yoy": 50.18
+                },
+                {
+                    "quarter": "Q2 2024",
+                    "revenue": 269000000,
+                    "eps": 0.76,
+                    "profitMargins": 105.5,
+                    "fcf": -145000000,
+                    "qoq": 11.62,
+                    "yoy": -1.1
+                },
+                {
+                    "quarter": "Q1 2024",
+                    "revenue": 241000000,
+                    "eps": -0.13,
+                    "profitMargins": -17.7,
+                    "fcf": -128000000,
+                    "qoq": -19.13,
+                    "yoy": 2.99
+                },
+                {
+                    "quarter": "Q4 2023",
+                    "revenue": 298000000,
+                    "eps": 0.01,
+                    "profitMargins": 1.3,
+                    "fcf": -165000000,
+                    "qoq": 4.56,
+                    "yoy": 15.06
+                },
+                {
+                    "quarter": "Q3 2023",
+                    "revenue": 285000000,
+                    "eps": 0.01,
+                    "profitMargins": 0.8,
+                    "fcf": -106000000,
+                    "qoq": 4.78,
+                    "yoy": 16.33
+                },
+                {
+                    "quarter": "Q2 2023",
+                    "revenue": 272000000,
+                    "eps": 0.02,
+                    "profitMargins": 2.0,
+                    "fcf": -118000000,
+                    "qoq": 16.24,
+                    "yoy": 20.89
+                },
+                {
+                    "quarter": "Q1 2023",
+                    "revenue": 234000000,
+                    "eps": 0.05,
+                    "profitMargins": 7.4,
+                    "fcf": -101000000,
+                    "qoq": -9.65,
+                    "yoy": 4.93
+                },
+                {
+                    "quarter": "Q4 2022",
+                    "revenue": 259000000,
+                    "eps": 0.08,
+                    "profitMargins": 8.7,
+                    "fcf": -447000000,
+                    "qoq": 5.71,
+                    "yoy": -32.02
+                },
+                {
+                    "quarter": "Q3 2022",
+                    "revenue": 245000000,
+                    "eps": -0.1,
+                    "profitMargins": -13.4,
+                    "fcf": -139000000,
+                    "qoq": 8.89,
+                    "yoy": 0.0
+                },
+                {
+                    "quarter": "Q2 2022",
+                    "revenue": 225000000,
+                    "eps": -0.26,
+                    "profitMargins": -35.3,
+                    "fcf": -144000000,
+                    "qoq": 0.9,
+                    "yoy": -0.44
+                },
+                {
+                    "quarter": "Q1 2022",
+                    "revenue": 223000000,
+                    "eps": -0.07,
+                    "profitMargins": -8.7,
+                    "fcf": -156000000,
+                    "qoq": -41.47,
+                    "yoy": -3.04
+                },
+                {
+                    "quarter": "Q4 2021",
+                    "revenue": 381000000,
+                    "eps": 0.39,
+                    "profitMargins": 23.1,
+                    "fcf": 67000000,
+                    "qoq": 55.51,
+                    "yoy": 50.59
+                },
+                {
+                    "quarter": "Q3 2021",
+                    "revenue": 245000000,
+                    "eps": -0.03,
+                    "profitMargins": -2.7,
+                    "fcf": -36000000,
+                    "qoq": 8.41,
+                    "yoy": 0.41
+                },
+                {
+                    "quarter": "Q2 2021",
+                    "revenue": 226000000,
+                    "eps": 1.19,
+                    "profitMargins": 144.2,
+                    "fcf": -10000000,
+                    "qoq": -1.74,
+                    "yoy": 5.12
+                },
+                {
+                    "quarter": "Q1 2021",
+                    "revenue": 230000000,
+                    "eps": 0.14,
+                    "profitMargins": 21.9,
+                    "fcf": -21000000,
+                    "qoq": -9.09,
+                    "yoy": 76.92
+                },
+                {
+                    "quarter": "Q4 2020",
+                    "revenue": 253000000,
+                    "eps": 0.31,
+                    "profitMargins": 26.6,
+                    "fcf": 143000000,
+                    "qoq": 3.69,
+                    "yoy": 0.0
+                },
+                {
+                    "quarter": "Q3 2020",
+                    "revenue": 244000000,
+                    "eps": 0.01,
+                    "profitMargins": 4.6,
+                    "fcf": 28500000,
+                    "qoq": 13.49,
+                    "yoy": 165.22
+                },
+                {
+                    "quarter": "Q1 2020",
+                    "revenue": 130000000,
+                    "eps": 0.08,
+                    "profitMargins": 0.0838,
+                    "fcf": -3660000,
+                    "qoq": 0.0924,
+                    "yoy": 267.23
+                },
+                {
+                    "quarter": "Q2 2020",
+                    "revenue": 215400000,
+                    "eps": -0.26,
+                    "profitMargins": -0.2725,
+                    "fcf": -38422000,
+                    "qoq": 0.6569,
+                    "yoy": 508.47
+                }
+            ]
+        },
+        {
+            "id": "kgc",
+            "financials": [
+                {
+                    "quarter": "Q4 2025",
+                    "revenue": null,
+                    "eps": null,
+                    "profitMargins": null,
+                    "fcf": null,
+                    "qoq": null,
+                    "yoy": null
+                },
+                {
+                    "quarter": "Q3 2025",
+                    "revenue": 1802000000,
+                    "eps": 0.44,
+                    "profitMargins": 32.46,
+                    "fcf": 686700000,
+                    "qoq": 4.22,
+                    "yoy": 25.84
+                },
+                {
+                    "quarter": "Q2 2025",
+                    "revenue": 1729000000,
+                    "eps": 0.44,
+                    "profitMargins": 28.5,
+                    "fcf": 414600000,
+                    "qoq": 15.42,
+                    "yoy": 41.74
+                },
+                {
+                    "quarter": "Q1 2025",
+                    "revenue": 1498000000,
+                    "eps": 0.3,
+                    "profitMargins": 24.8,
+                    "fcf": 602800000,
+                    "qoq": 5.79,
+                    "yoy": 38.47
+                },
+                {
+                    "quarter": "Q4 2024",
+                    "revenue": 1416000000,
+                    "eps": 0.22,
+                    "profitMargins": 19.5,
+                    "fcf": 434400000,
+                    "qoq": -1.12,
+                    "yoy": 26.88
+                },
+                {
+                    "quarter": "Q3 2024",
+                    "revenue": 1432000000,
+                    "eps": 0.29,
+                    "profitMargins": 19.2,
+                    "fcf": 414900000,
+                    "qoq": 17.38,
+                    "yoy": 29.95
+                },
+                {
+                    "quarter": "Q2 2024",
+                    "revenue": 1220000000,
+                    "eps": 0.17,
+                    "profitMargins": 17.3,
+                    "fcf": 345900000,
+                    "qoq": 12.75,
+                    "yoy": 11.72
+                },
+                {
+                    "quarter": "Q1 2024",
+                    "revenue": 1082000000,
+                    "eps": 0.09,
+                    "profitMargins": 9.9,
+                    "fcf": 145000000,
+                    "qoq": -3.05,
+                    "yoy": 16.47
+                },
+                {
+                    "quarter": "Q4 2023",
+                    "revenue": 1116000000,
+                    "eps": 0.06,
+                    "profitMargins": 5.9,
+                    "fcf": 116700000,
+                    "qoq": 1.27,
+                    "yoy": 3.72
+                },
+                {
+                    "quarter": "Q3 2023",
+                    "revenue": 1102000000,
+                    "eps": 0.09,
+                    "profitMargins": 9.9,
+                    "fcf": 345900000,
+                    "qoq": 0.92,
+                    "yoy": 28.59
+                },
+                {
+                    "quarter": "Q2 2023",
+                    "revenue": 1092000000,
+                    "eps": 0.12,
+                    "profitMargins": 13.8,
+                    "fcf": 121400000,
+                    "qoq": 17.55,
+                    "yoy": 32.85
+                },
+                {
+                    "quarter": "Q1 2023",
+                    "revenue": 929000000,
+                    "eps": 0.07,
+                    "profitMargins": 9.7,
+                    "fcf": -25300000,
+                    "qoq": -13.66,
+                    "yoy": 32.52
+                },
+                {
+                    "quarter": "Q4 2022",
+                    "revenue": 1076000000,
+                    "eps": -0.08,
+                    "profitMargins": -9.9,
+                    "fcf": 157500000,
+                    "qoq": 25.55,
+                    "yoy": 98.89
+                },
+                {
+                    "quarter": "Q3 2022",
+                    "revenue": 857000000,
+                    "eps": 0.05,
+                    "profitMargins": 7.6,
+                    "fcf": 265100000,
+                    "qoq": 4.26,
+                    "yoy": 47.25
+                },
+                {
+                    "quarter": "Q2 2022",
+                    "revenue": 822000000,
+                    "eps": -0.03,
+                    "profitMargins": -5.7,
+                    "fcf": 35300000,
+                    "qoq": 17.26,
+                    "yoy": 16.1
+                },
+                {
+                    "quarter": "Q1 2022",
+                    "revenue": 701000000,
+                    "eps": -0.41,
+                    "profitMargins": -11.5,
+                    "fcf": -219600000,
+                    "qoq": 29.57,
+                    "yoy": -8.84
+                },
+                {
+                    "quarter": "Q4 2021",
+                    "revenue": 541000000,
+                    "eps": 0.0,
+                    "profitMargins": 14.7,
+                    "fcf": -107700000,
+                    "qoq": -7.04,
+                    "yoy": -54.73
+                },
+                {
+                    "quarter": "Q3 2021",
+                    "revenue": 582000000,
+                    "eps": -0.04,
+                    "profitMargins": -7.6,
+                    "fcf": -165600000,
+                    "qoq": -17.8,
+                    "yoy": -48.54
+                },
+                {
+                    "quarter": "Q2 2021",
+                    "revenue": 708000000,
+                    "eps": 0.09,
+                    "profitMargins": 15.7,
+                    "fcf": -101800000,
+                    "qoq": -7.93,
+                    "yoy": -29.69
+                },
+                {
+                    "quarter": "Q1 2021",
+                    "revenue": 769000000,
+                    "eps": 0.12,
+                    "profitMargins": 19.4,
+                    "fcf": -18900000,
+                    "qoq": -35.65,
+                    "yoy": -12.61
+                },
+                {
+                    "quarter": "Q4 2020",
+                    "revenue": 1195000000,
+                    "eps": 0.62,
+                    "profitMargins": 65.5,
+                    "fcf": 195500000,
+                    "qoq": 5.66,
+                    "yoy": 19.98
+                },
+                {
+                    "quarter": "Q3 2020",
+                    "revenue": 1131000000,
+                    "eps": 0.19,
+                    "profitMargins": 20.7,
+                    "fcf": 361900000,
+                    "qoq": 12.31,
+                    "yoy": 28.96
+                },
+                {
+                    "quarter": "Q2 2020",
+                    "revenue": 100700000,
+                    "eps": 0.15,
+                    "profitMargins": 18.7,
+                    "fcf": 243400000,
+                    "qoq": 14.43,
+                    "yoy": 20.17
+                },
+                {
+                    "quarter": "Q1 2020",
+                    "revenue": 880000000,
+                    "eps": 0.1,
+                    "profitMargins": 14.2,
+                    "fcf": 242000000,
+                    "qoq": -11.65,
+                    "yoy": 11.96
+                }
+            ]
+        },
+        {
+            "id": "gfi",
+            "financials": [
+                {
+                    "quarter": "Q4 2025",
+                    "revenue": null,
+                    "eps": null,
+                    "profitMargins": null,
+                    "fcf": null,
+                    "qoq": null,
+                    "yoy": null
+                },
+                {
+                    "quarter": "Q3 2025",
+                    "revenue": 1688000000,
+                    "eps": 0.44,
+                    "profitMargins": 14.8,
+                    "fcf": 451000000,
+                    "qoq": 0.0,
+                    "yoy": -3.0
+                },
+                {
+                    "quarter": "Q2 2025",
+                    "revenue": 1688000000,
+                    "eps": 0.41,
+                    "profitMargins": 13.5,
+                    "fcf": 277000000,
+                    "qoq": 6.5,
+                    "yoy": 3.0
+                },
+                {
+                    "quarter": "Q1 2025",
+                    "revenue": 3480000000,
+                    "eps": 0.85,
+                    "profitMargins": 51.92,
+                    "fcf": 412000000,
+                    "qoq": 5.4,
+                    "yoy": 191.6
+                },
+                {
+                    "quarter": "Q4 2024",
+                    "revenue": 1485000000,
+                    "eps": 0.42,
+                    "profitMargins": 25.6,
+                    "fcf": 321000000,
+                    "qoq": 2.41,
+                    "yoy": 27.14
+                },
+                {
+                    "quarter": "Q3 2024",
+                    "revenue": 1450000000,
+                    "eps": 0.42,
+                    "profitMargins": 26.2,
+                    "fcf": 284000000,
+                    "qoq": 29.35,
+                    "yoy": 33.89
+                },
+                {
+                    "quarter": "Q2 2024",
+                    "revenue": 1121000000,
+                    "eps": 0.21,
+                    "profitMargins": 16.9,
+                    "fcf": -37000000,
+                    "qoq": -2.18,
+                    "yoy": -4.35
+                },
+                {
+                    "quarter": "Q1 2024",
+                    "revenue": 1146000000,
+                    "eps": 0.22,
+                    "profitMargins": 17.4,
+                    "fcf": -21000000,
+                    "qoq": -1.88,
+                    "yoy": 6.31
+                },
+                {
+                    "quarter": "Q4 2023",
+                    "revenue": 1168000000,
+                    "eps": 0.19,
+                    "profitMargins": 14.5,
+                    "fcf": 94000000,
+                    "qoq": 7.85,
+                    "yoy": 5.13
+                },
+                {
+                    "quarter": "Q3 2023",
+                    "revenue": 1083000000,
+                    "eps": 0.1,
+                    "profitMargins": 8.2,
+                    "fcf": 133000000,
+                    "qoq": -0.0759,
+                    "yoy": 0.65
+                },
+                {
+                    "quarter": "Q2 2023",
+                    "revenue": 1172000000,
+                    "eps": 0.25,
+                    "profitMargins": 19.2,
+                    "fcf": 152000000,
+                    "qoq": 8.72,
+                    "yoy": 11.41
+                },
+                {
+                    "quarter": "Q1 2023",
+                    "revenue": 1078000000,
+                    "eps": 0.26,
+                    "profitMargins": 21.5,
+                    "fcf": -12000000,
+                    "qoq": -0.0297,
+                    "yoy": 2.86
+                },
+                {
+                    "quarter": "Q4 2022",
+                    "revenue": 1111000000,
+                    "eps": 0.21,
+                    "profitMargins": 17.1,
+                    "fcf": 26000000,
+                    "qoq": 3.25,
+                    "yoy": 2.59
+                },
+                {
+                    "quarter": "Q3 2022",
+                    "revenue": 1076000000,
+                    "eps": 0.19,
+                    "profitMargins": 15.8,
+                    "fcf": 102000000,
+                    "qoq": 2.28,
+                    "yoy": 5.8
+                },
+                {
+                    "quarter": "Q2 2022",
+                    "revenue": 1052000000,
+                    "eps": 0.2,
+                    "profitMargins": 16.5,
+                    "fcf": 125000000,
+                    "qoq": 0.38,
+                    "yoy": 3.95
+                },
+                {
+                    "quarter": "Q1 2022",
+                    "revenue": 1048000000,
+                    "eps": 0.2,
+                    "profitMargins": 16.5,
+                    "fcf": 178000000,
+                    "qoq": -3.23,
+                    "yoy": -3.23
+                },
+                {
+                    "quarter": "Q4 2021",
+                    "revenue": 1083000000,
+                    "eps": 0.23,
+                    "profitMargins": 18.8,
+                    "fcf": 213000000,
+                    "qoq": 6.49,
+                    "yoy": 6.07
+                },
+                {
+                    "quarter": "Q3 2021",
+                    "revenue": 1017000000,
+                    "eps": 0.22,
+                    "profitMargins": 18.7,
+                    "fcf": 134000000,
+                    "qoq": 0.49,
+                    "yoy": -2.4
+                },
+                {
+                    "quarter": "Q2 2021",
+                    "revenue": 1012000000,
+                    "eps": 0.21,
+                    "profitMargins": 18.4,
+                    "fcf": 113000000,
+                    "qoq": -6.56,
+                    "yoy": 6.41
+                },
+                {
+                    "quarter": "Q1 2021",
+                    "revenue": 1083000000,
+                    "eps": 0.23,
+                    "profitMargins": 18.8,
+                    "fcf": 126000000,
+                    "qoq": 6.07,
+                    "yoy": 23.35
+                },
+                {
+                    "quarter": "Q4 2020",
+                    "revenue": 1021000000,
+                    "eps": 0.5,
+                    "profitMargins": 42.8,
+                    "fcf": 257000000,
+                    "qoq": -2.02,
+                    "yoy": 24.8
+                },
+                {
+                    "quarter": "Q3 2020",
+                    "revenue": 1042000000,
+                    "eps": 0.14,
+                    "profitMargins": 23.2,
+                    "fcf": 288000000,
+                    "qoq": 9.57,
+                    "yoy": 42.1
+                },
+                {
+                    "quarter": "Q2 2020",
+                    "revenue": 951000000,
+                    "eps": 0.1,
+                    "profitMargins": 8.83,
+                    "fcf": 181000000,
+                    "qoq": 8.31,
+                    "yoy": 35.2
+                },
+                {
+                    "quarter": "Q1 2020",
+                    "revenue": 878000000,
+                    "eps": 0.08,
+                    "profitMargins": 8.09,
+                    "fcf": 142000000,
+                    "qoq": null,
+                    "yoy": 23.5
+                }
+            ]
+        },
+        {
+            "id": "hl",
+            "financials": [
+                {
+                    "quarter": "Q4 2025",
+                    "revenue": null,
+                    "eps": null,
+                    "profitMargins": null,
+                    "fcf": null,
+                    "qoq": null,
+                    "yoy": null
+                },
+                {
+                    "quarter": "Q3 2025",
+                    "revenue": 235800000,
+                    "eps": 0.12,
+                    "profitMargins": 18.9,
+                    "fcf": 90000000,
+                    "qoq": 6.7,
+                    "yoy": 300.0
+                },
+                {
+                    "quarter": "Q2 2025",
+                    "revenue": 221000000,
+                    "eps": 0.08,
+                    "profitMargins": 15.4,
+                    "fcf": 48200000,
+                    "qoq": 3.03,
+                    "yoy": 24.6
+                },
+                {
+                    "quarter": "Q1 2025",
+                    "revenue": 261339000,
+                    "eps": 0.05,
+                    "profitMargins": 11.0,
+                    "fcf": -18000000,
+                    "qoq": 5.0,
+                    "yoy": 37.89
+                },
+                {
+                    "quarter": "Q4 2024",
+                    "revenue": 249700000,
+                    "eps": 0.02,
+                    "profitMargins": 4.7,
+                    "fcf": -14800000,
+                    "qoq": 1.9,
+                    "yoy": 55.4
+                },
+                {
+                    "quarter": "Q3 2024",
+                    "revenue": 245100000,
+                    "eps": 0.0,
+                    "profitMargins": 0.7,
+                    "fcf": 18400000,
+                    "qoq": -0.2,
+                    "yoy": 34.7
+                },
+                {
+                    "quarter": "Q2 2024",
+                    "revenue": 245700000,
+                    "eps": 0.04,
+                    "profitMargins": 11.3,
+                    "fcf": 21300000,
+                    "qoq": 29.6,
+                    "yoy": 37.9
+                },
+                {
+                    "quarter": "Q1 2024",
+                    "revenue": 189500000,
+                    "eps": 0.01,
+                    "profitMargins": -3.1,
+                    "fcf": -21100000,
+                    "qoq": 17.9,
+                    "yoy": -5.0
+                },
+                {
+                    "quarter": "Q4 2023",
+                    "revenue": 160700000,
+                    "eps": -0.04,
+                    "profitMargins": -26.8,
+                    "fcf": -36000000,
+                    "qoq": -11.7,
+                    "yoy": -17.5
+                },
+                {
+                    "quarter": "Q3 2023",
+                    "revenue": 181900000,
+                    "eps": -0.04,
+                    "profitMargins": -12.4,
+                    "fcf": -29200000,
+                    "qoq": 2.1,
+                    "yoy": 24.3
+                },
+                {
+                    "quarter": "Q2 2023",
+                    "revenue": 178100000,
+                    "eps": -0.03,
+                    "profitMargins": -8.9,
+                    "fcf": -46200000,
+                    "qoq": -10.7,
+                    "yoy": -6.9
+                },
+                {
+                    "quarter": "Q1 2023",
+                    "revenue": 199500000,
+                    "eps": -0.01,
+                    "profitMargins": -0.2,
+                    "fcf": -36800000,
+                    "qoq": 2.4,
+                    "yoy": 6.9
+                },
+                {
+                    "quarter": "Q4 2022",
+                    "revenue": 194800000,
+                    "eps": -0.01,
+                    "profitMargins": -1.5,
+                    "fcf": -12400000,
+                    "qoq": 33.2,
+                    "yoy": 5.2
+                },
+                {
+                    "quarter": "Q3 2022",
+                    "revenue": 146300000,
+                    "eps": -0.04,
+                    "profitMargins": -16.3,
+                    "fcf": -15600000,
+                    "qoq": -23.5,
+                    "yoy": -24.4
+                },
+                {
+                    "quarter": "Q2 2022",
+                    "revenue": 191200000,
+                    "eps": -0.03,
+                    "profitMargins": -6.3,
+                    "fcf": 11200000,
+                    "qoq": 2.5,
+                    "yoy": -12.3
+                },
+                {
+                    "quarter": "Q1 2022",
+                    "revenue": 186500000,
+                    "eps": 0.01,
+                    "profitMargins": 1.1,
+                    "fcf": -10100000,
+                    "qoq": 0.7,
+                    "yoy": -11.6
+                },
+                {
+                    "quarter": "Q4 2021",
+                    "revenue": 185200000,
+                    "eps": 0.01,
+                    "profitMargins": 5.4,
+                    "fcf": 38700000,
+                    "qoq": -4.3,
+                    "yoy": -2.0
+                },
+                {
+                    "quarter": "Q3 2021",
+                    "revenue": 193600000,
+                    "eps": 0.0,
+                    "profitMargins": 1.2,
+                    "fcf": 22100000,
+                    "qoq": -11.2,
+                    "yoy": -3.1
+                },
+                {
+                    "quarter": "Q2 2021",
+                    "revenue": 218000000,
+                    "eps": 0.01,
+                    "profitMargins": 3.7,
+                    "fcf": 26100000,
+                    "qoq": 3.4,
+                    "yoy": 30.9
+                },
+                {
+                    "quarter": "Q1 2021",
+                    "revenue": 210900000,
+                    "eps": 0.04,
+                    "profitMargins": 8.5,
+                    "fcf": 24200000,
+                    "qoq": 11.6,
+                    "yoy": 50.3
+                },
+                {
+                    "quarter": "Q4 2020",
+                    "revenue": 188900000,
+                    "eps": -0.09,
+                    "profitMargins": -2.1,
+                    "fcf": 19100000,
+                    "qoq": -5.4,
+                    "yoy": 19.4
+                },
+                {
+                    "quarter": "Q3 2020",
+                    "revenue": 199700000,
+                    "eps": 2.8,
+                    "profitMargins": 7.6,
+                    "fcf": 44800000,
+                    "qoq": 19.9,
+                    "yoy": 23.6
+                },
+                {
+                    "quarter": "Q2 2020",
+                    "revenue": 166500000,
+                    "eps": -2.7,
+                    "profitMargins": -84.2,
+                    "fcf": 23600000,
+                    "qoq": 18.7,
+                    "yoy": 27.6
+                },
+                {
+                    "quarter": "Q1 2020",
+                    "revenue": 140300000,
+                    "eps": -0.03,
+                    "profitMargins": -8.1,
+                    "fcf": -21400000,
+                    "qoq": -11.3,
+                    "yoy": -8.5
+                }
+            ]
         }
     ]
 }
