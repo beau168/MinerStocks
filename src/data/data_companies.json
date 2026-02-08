@@ -44,6 +44,51 @@
             "nextEarningsDate": "2026-03-10",
             "marketCap": 44740000000,
             "debt": 0
+        },
+        {
+            "id": "paas",
+            "name": "Pan American Silver",
+            "ticker": "PAAS",
+            "color": "#a67b5b",
+            "nextEarningsDate": "2026-02-18",
+            "marketCap": 26540000000,
+            "debt": 857000000
+        },
+        {
+            "id": "eqx",
+            "name": "Equinox Gold",
+            "ticker": "EQX",
+            "color": "#16a34a",
+            "nextEarningsDate": "2026-02-18",
+            "marketCap": 11440000000,
+            "debt": 580000000
+        },
+        {
+            "id": "kgc",
+            "name": "Kinross Gold",
+            "ticker": "KGC",
+            "color": "#dc2626",
+            "nextEarningsDate": "2026-02-18",
+            "marketCap": 40200000000,
+            "debt": 2520000000
+        },
+        {
+            "id": "gfi",
+            "name": "Gold Fields",
+            "ticker": "GFI",
+            "color": "#f97316",
+            "nextEarningsDate": "2026-02-19",
+            "marketCap": 47900000000,
+            "debt": 1100000000
+        },
+        {
+            "id": "hl",
+            "name": "Hecla Mining",
+            "ticker": "HL",
+            "color": "#3b82f6",
+            "nextEarningsDate": "2026-02-17",
+            "marketCap": 15260000000,
+            "debt": 564720000
         }
     ]
 }

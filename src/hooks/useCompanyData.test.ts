@@ -3,10 +3,10 @@ import { renderHook, waitFor } from '@testing-library/react';
 import { useCompanyData } from './useCompanyData';
 
 describe('useCompanyData', () => {
-    it('should return 5 companies', async () => {
+    it('should return 10 companies', async () => {
         const { result } = renderHook(() => useCompanyData());
         await waitFor(() => expect(result.current.loading).toBe(false));
-        expect(result.current.companies).toHaveLength(5);
+        expect(result.current.companies).toHaveLength(10);
     });
 
     it('should return available quarters', async () => {
@@ -29,7 +29,7 @@ describe('useCompanyData', () => {
         const { result } = renderHook(() => useCompanyData());
         await waitFor(() => expect(result.current.loading).toBe(false));
         const data = result.current.getQuarterData('Q3 2025');
-        expect(data).toHaveLength(5); // 5 companies in that quarter
+        expect(data).toHaveLength(10); // 10 companies in that quarter
         expect(data[0].companyId).toBeDefined();
     });
 
