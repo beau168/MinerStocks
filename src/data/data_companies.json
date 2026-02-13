@@ -6,7 +6,7 @@
             "ticker": "NEM",
             "color": "#fbbf24",
             "nextEarningsDate": "2026-02-19",
-            "marketCap": 127840000000,
+            "marketCap": 142000000000,
             "debt": 5535000000
         },
         {
@@ -14,8 +14,8 @@
             "name": "Barrick Gold",
             "ticker": "GOLD",
             "color": "#2563eb",
-            "nextEarningsDate": "2026-02-12",
-            "marketCap": 79920000000,
+            "nextEarningsDate": "2026-02-05",
+            "marketCap": 79810000000,
             "debt": 4732000000
         },
         {
@@ -24,17 +24,17 @@
             "ticker": "AEM",
             "color": "#f87171",
             "nextEarningsDate": "2026-02-12",
-            "marketCap": 135110000000,
-            "debt": 733690000
+            "marketCap": 108740000000,
+            "debt": 1130000000
         },
         {
             "id": "wpm",
             "name": "Wheaton Precious Metals",
             "ticker": "WPM",
             "color": "#9333ea",
-            "nextEarningsDate": "2026-05-11",
-            "marketCap": 63670000000,
-            "debt": 450000000
+            "nextEarningsDate": "2026-03-12",
+            "marketCap": 66400000000,
+            "debt": 0
         },
         {
             "id": "fnv",
@@ -42,7 +42,7 @@
             "ticker": "FNV",
             "color": "#10b981",
             "nextEarningsDate": "2026-03-10",
-            "marketCap": 44740000000,
+            "marketCap": 48640000000,
             "debt": 0
         },
         {
@@ -51,7 +51,7 @@
             "ticker": "PAAS",
             "color": "#a67b5b",
             "nextEarningsDate": "2026-02-18",
-            "marketCap": 26540000000,
+            "marketCap": 24420000000,
             "debt": 857000000
         },
         {
@@ -59,9 +59,9 @@
             "name": "Equinox Gold",
             "ticker": "EQX",
             "color": "#16a34a",
-            "nextEarningsDate": "2026-02-18",
-            "marketCap": 11230000000,
-            "debt": 580000000
+            "nextEarningsDate": "2026-02-19",
+            "marketCap": 12340000000,
+            "debt": 150000000
         },
         {
             "id": "kgc",
@@ -69,8 +69,8 @@
             "ticker": "KGC",
             "color": "#dc2626",
             "nextEarningsDate": "2026-02-18",
-            "marketCap": 38500000000,
-            "debt": 2520000000
+            "marketCap": 41170000000,
+            "debt": 1230000000
         },
         {
             "id": "gfi",
@@ -78,8 +78,8 @@
             "ticker": "GFI",
             "color": "#f97316",
             "nextEarningsDate": "2026-02-19",
-            "marketCap": 47030000000,
-            "debt": 1100000000
+            "marketCap": 52170000000,
+            "debt": 791000000
         },
         {
             "id": "hl",
@@ -87,8 +87,8 @@
             "ticker": "HL",
             "color": "#3b82f6",
             "nextEarningsDate": "2026-02-17",
-            "marketCap": 15260000000,
-            "debt": 564720000
+            "marketCap": 15290000000,
+            "debt": 270000000
         }
     ]
 }
