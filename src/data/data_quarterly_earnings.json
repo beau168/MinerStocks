@@ -495,12 +495,12 @@
             "financials": [
                 {
                     "quarter": "Q4 2025",
-                    "revenue": null,
-                    "eps": null,
-                    "profitMargins": null,
-                    "fcf": null,
-                    "qoq": null,
-                    "yoy": null
+                    "revenue": 3564000000,
+                    "eps": 2.70,
+                    "profitMargins": 42.7,
+                    "fcf": 1310000000,
+                    "qoq": 15.3,
+                    "yoy": 60.3
                 },
                 {
                     "quarter": "Q3 2025",
