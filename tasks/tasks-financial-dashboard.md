@@ -170,6 +170,13 @@ Update the file after completing each sub-task, not just after completing an ent
   - [x] 7.9 Final visual polish: ensure all hover states, transitions, and animations match MarketOverview.tsx
   - [x] 7.10 Clean up MarketOverview.tsx (can be deleted or kept as reference)
 
+- [x] 8.0 Build environment compatibility fix (2026-02-13)
+  - [x] 8.1 Identified Node.js version mismatch: environment runs **v20.11.0**, but Vite 7 requires **v20.19+** or **v22.12+**
+  - [x] 8.2 Downgraded `vite` from `^7.2.4` → `^6.0.0` (installed v6.4.1) to resolve `crypto.hash is not a function` error
+  - [x] 8.3 Downgraded `@vitejs/plugin-react` from `^5.1.2` → `^4.3.4` for Vite 6 compatibility
+  - [x] 8.4 Verified production build succeeds (`npm run build` — 700 modules, dist generated)
+  - [x] 8.5 Verified dev server starts successfully (`npm run dev` — running on http://localhost:5173/)
+
 ---
 
 ## Completion Checklist
@@ -188,3 +195,5 @@ Before marking the feature as complete, verify:
 - [x] Earnings Calendar shows upcoming dates, sorted correctly
 - [x] Application is responsive on iPad and iPhone
 - [x] Lighthouse accessibility score > 90
+
+> **⚠️ Note:** Vite and @vitejs/plugin-react were downgraded on 2026-02-13 to maintain compatibility with Node.js v20.11.0. If Node.js is upgraded to v20.19+ or v22.12+, these packages can be restored to their latest major versions (Vite 7 / plugin-react 5).
