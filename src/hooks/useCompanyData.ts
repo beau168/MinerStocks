@@ -1,9 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
-import companyMetadata from '../data/data_companies.json';
-import quarterlyEarnings from '../data/data_quarterly_earnings.json';
 import type { Company, FinancialData, QuarterData } from '../types';
 
-// Simulate a singleton cache to avoid multiple "fetches" in different components
+// Singleton cache to avoid multiple fetches in different components
 let cachedData: FinancialData | null = null;
 
 const parseQuarter = (qStr: string) => {
@@ -34,11 +32,20 @@ export const useCompanyData = () => {
 
         const loadData = async () => {
             try {
-                // Simulate network request duration
-                await new Promise(resolve => setTimeout(resolve, 800));
+                const [companyRes, earningsRes] = await Promise.all([
+                    fetch('/data/data_companies.json'),
+                    fetch('/data/data_quarterly_earnings.json')
+                ]);
 
-                const mergedCompanies = companyMetadata.companies.map(meta => {
-                    const financials = quarterlyEarnings.companies.find(f => f.id === meta.id)?.financials || [];
+                if (!companyRes.ok || !earningsRes.ok) {
+                    throw new Error('Failed to fetch data files');
+                }
+
+                const companyMetadata = await companyRes.json();
+                const quarterlyEarnings = await earningsRes.json();
+
+                const mergedCompanies = companyMetadata.companies.map((meta: any) => {
+                    const financials = quarterlyEarnings.companies.find((f: any) => f.id === meta.id)?.financials || [];
                     return {
                         ...meta,
                         financials
