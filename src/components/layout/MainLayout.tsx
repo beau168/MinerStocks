@@ -20,7 +20,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                 </div>
             )}
 
-            <div className="flex-1 flex flex-col min-w-0 overflow-hidden bg-background-light dark:bg-background-dark relative">
+            <div className="flex-1 flex flex-col min-w-0  overflow-hidden bg-background-light dark:bg-background-dark relative">
                 {/* Mobile Header */}
                 <header className="md:hidden flex items-center justify-between p-4 border-b border-gray-200 dark:border-border-dark bg-white dark:bg-surface-darker flex-shrink-0 z-10">
                     <div className="flex items-center gap-3">
