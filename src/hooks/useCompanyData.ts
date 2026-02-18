@@ -3,9 +3,11 @@ import type { Company, FinancialData, QuarterData } from '../types';
 
 // Singleton cache to avoid multiple fetches in different components
 let cachedData: FinancialData | null = null;
+let fetchPromise: Promise<FinancialData> | null = null;
 
 const parseQuarter = (qStr: string) => {
     const [q, year] = qStr.split(' ');
+    if (!q || !year) return { q: 0, year: 0 };
     return {
         q: parseInt(q.replace('Q', '')),
         year: parseInt(year)
@@ -26,23 +28,38 @@ export const useCompanyData = () => {
 
     useEffect(() => {
         if (cachedData) {
+            setData(cachedData);
             setLoading(false);
             return;
         }
 
-        const loadData = async () => {
+        const loadData = async (): Promise<FinancialData> => {
             try {
+                // Use relative paths to ensure it works even if the base URL is not the root
+                // Vite handles these correctly relative to the deployment root
                 const [companyRes, earningsRes] = await Promise.all([
-                    fetch('/data/data_companies.json'),
-                    fetch('/data/data_quarterly_earnings.json')
+                    fetch(`${window.location.origin}/data/data_companies.json`),
+                    fetch(`${window.location.origin}/data/data_quarterly_earnings.json`)
                 ]);
 
                 if (!companyRes.ok || !earningsRes.ok) {
-                    throw new Error('Failed to fetch data files');
+                    throw new Error(`Failed to fetch data: ${companyRes.status} ${companyRes.statusText}`);
+                }
+
+                const contentType1 = companyRes.headers.get('content-type');
+                const contentType2 = earningsRes.headers.get('content-type');
+                if ((contentType1 && !contentType1.includes('application/json')) ||
+                    (contentType2 && !contentType2.includes('application/json'))) {
+                    // This often happens if a SPA redirects missing files to index.html
+                    throw new Error('Received non-JSON response from server. Check if data files exist.');
                 }
 
                 const companyMetadata = await companyRes.json();
                 const quarterlyEarnings = await earningsRes.json();
+
+                if (!companyMetadata.companies || !quarterlyEarnings.companies) {
+                    throw new Error('Invalid data format received');
+                }
 
                 const mergedCompanies = companyMetadata.companies.map((meta: any) => {
                     const financials = quarterlyEarnings.companies.find((f: any) => f.id === meta.id)?.financials || [];
@@ -52,17 +69,29 @@ export const useCompanyData = () => {
                     } as Company;
                 });
 
-                cachedData = { companies: mergedCompanies };
-                setData(cachedData);
-                setLoading(false);
-            } catch (err) {
-                console.error(err);
-                setError('Failed to load company data');
-                setLoading(false);
+                const result = { companies: mergedCompanies };
+                cachedData = result;
+                return result;
+            } catch (err: any) {
+                console.error('Error loading company data:', err);
+                throw err;
             }
         };
 
-        loadData();
+        if (!fetchPromise) {
+            fetchPromise = loadData();
+        }
+
+        fetchPromise
+            .then(d => {
+                setData(d);
+                setLoading(false);
+            })
+            .catch(err => {
+                setError(err.message || 'Failed to load company data');
+                setLoading(false);
+                fetchPromise = null; // Allow retry on next mount
+            });
     }, []);
 
     const getCompanyById = useCallback((id: string): Company | undefined => {
