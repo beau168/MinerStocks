@@ -5,14 +5,13 @@
             "financials": [
                 {
                     "quarter": "Q4 2025",
-                    "marketCap": 125840000000,
-                    "revenue": null,
-                    "eps": null,
-                    "profitMargins": null,
-                    "fcf": null,
-                    "qoq": null,
-                    "yoy": null,
-                    "debt": 5540000000
+                    "marketCap": 141450000000,
+                    "revenue": 6820000000,
+                    "eps": 2.52,
+                    "profitMargins": 0.3125,
+                    "fcf": 2800000000,
+                    "qoq": 0.2063,
+                    "yoy": 0.2063
                 },
                 {
                     "quarter": "Q3 2025",
@@ -22,8 +21,7 @@
                     "profitMargins": 30.2,
                     "fcf": 1570000000,
                     "qoq": 3.9,
-                    "yoy": 108.8,
-                    "debt": 5540000000
+                    "yoy": 108.8
                 },
                 {
                     "quarter": "Q2 2025",
@@ -33,8 +31,7 @@
                     "profitMargins": 26.9,
                     "fcf": 1710000000,
                     "qoq": 6.1,
-                    "yoy": 151.4,
-                    "debt": 7610000000
+                    "yoy": 151.4
                 },
                 {
                     "quarter": "Q1 2025",
@@ -44,8 +41,7 @@
                     "profitMargins": 25.0,
                     "fcf": 1205000000,
                     "qoq": 6.6,
-                    "yoy": 127.3,
-                    "debt": 8500000000
+                    "yoy": 127.3
                 },
                 {
                     "quarter": "Q4 2024",
@@ -55,8 +51,7 @@
                     "profitMargins": 29.8,
                     "fcf": 1400000000,
                     "qoq": 15.0,
-                    "yoy": 122.0,
-                    "debt": 8970000000
+                    "yoy": 122.0
                 },
                 {
                     "quarter": "Q3 2024",
@@ -66,8 +61,7 @@
                     "profitMargins": 17.6,
                     "fcf": 760000000,
                     "qoq": 4.5,
-                    "yoy": 84.0,
-                    "debt": 7900000000
+                    "yoy": 84.0
                 },
                 {
                     "quarter": "Q2 2024",
@@ -77,8 +71,7 @@
                     "profitMargins": 16.4,
                     "fcf": 594000000,
                     "qoq": 9.4,
-                    "yoy": 118.0,
-                    "debt": 8200000000
+                    "yoy": 118.0
                 },
                 {
                     "quarter": "Q1 2024",
@@ -88,8 +81,7 @@
                     "profitMargins": 13.7,
                     "fcf": 450000000,
                     "qoq": 1.5,
-                    "yoy": 61.7,
-                    "debt": 8500000000
+                    "yoy": 61.7
                 },
                 {
                     "quarter": "Q4 2023",
@@ -99,8 +91,7 @@
                     "profitMargins": 12.6,
                     "fcf": 86000000,
                     "qoq": 57.8,
-                    "yoy": 23.7,
-                    "debt": 5570000000
+                    "yoy": 23.7
                 },
                 {
                     "quarter": "Q3 2023",
@@ -110,8 +101,7 @@
                     "profitMargins": 14.3,
                     "fcf": 397000000,
                     "qoq": -6.3,
-                    "yoy": -5.3,
-                    "debt": 5570000000
+                    "yoy": -5.3
                 },
                 {
                     "quarter": "Q2 2023",
@@ -121,8 +111,7 @@
                     "profitMargins": 12.3,
                     "fcf": 40000000,
                     "qoq": 0.0,
-                    "yoy": -12.4,
-                    "debt": 5570000000
+                    "yoy": -12.4
                 },
                 {
                     "quarter": "Q1 2023",
@@ -132,8 +121,7 @@
                     "profitMargins": 14.9,
                     "fcf": -45000000,
                     "qoq": -16.2,
-                    "yoy": -11.3,
-                    "debt": 5570000000
+                    "yoy": -11.3
                 },
                 {
                     "quarter": "Q4 2022",
@@ -143,8 +131,7 @@
                     "profitMargins": 13.7,
                     "fcf": 304000000,
                     "qoq": 20.7,
-                    "yoy": -5.6,
-                    "debt": 5570000000
+                    "yoy": -5.6
                 },
                 {
                     "quarter": "Q3 2022",
@@ -154,8 +141,7 @@
                     "profitMargins": 10.2,
                     "fcf": -65000000,
                     "qoq": -13.4,
-                    "yoy": -9.2,
-                    "debt": 5570000000
+                    "yoy": -9.2
                 },
                 {
                     "quarter": "Q2 2022",
@@ -165,8 +151,7 @@
                     "profitMargins": 15.0,
                     "fcf": 514000000,
                     "qoq": 1.3,
-                    "yoy": 0.0,
-                    "debt": 5570000000
+                    "yoy": 0.0
                 },
                 {
                     "quarter": "Q1 2022",
@@ -176,8 +161,7 @@
                     "profitMargins": 22.8,
                     "fcf": 432000000,
                     "qoq": -10.9,
-                    "yoy": 5.2,
-                    "debt": 5570000000
+                    "yoy": 5.2
                 },
                 {
                     "quarter": "Q4 2021",
@@ -187,8 +171,7 @@
                     "profitMargins": 23.0,
                     "fcf": 844000000,
                     "qoq": 16.9,
-                    "yoy": 0.3,
-                    "debt": 5570000000
+                    "yoy": 0.3
                 },
                 {
                     "quarter": "Q3 2021",
@@ -198,8 +181,7 @@
                     "profitMargins": 20.7,
                     "fcf": 374000000,
                     "qoq": -5.2,
-                    "yoy": -8.5,
-                    "debt": 5570000000
+                    "yoy": -8.5
                 },
                 {
                     "quarter": "Q2 2021",
@@ -209,8 +191,7 @@
                     "profitMargins": 27.1,
                     "fcf": 578000000,
                     "qoq": 6.6,
-                    "yoy": 29.1,
-                    "debt": 5570000000
+                    "yoy": 29.1
                 },
                 {
                     "quarter": "Q1 2021",
@@ -220,8 +201,7 @@
                     "profitMargins": 25.8,
                     "fcf": 442000000,
                     "qoq": -15.1,
-                    "yoy": 11.2,
-                    "debt": 5570000000
+                    "yoy": 11.2
                 },
                 {
                     "quarter": "Q4 2020",
@@ -231,8 +211,7 @@
                     "profitMargins": 31.4,
                     "fcf": 984000000,
                     "qoq": 6.6,
-                    "yoy": 13.8,
-                    "debt": 5500000000
+                    "yoy": 13.8
                 },
                 {
                     "quarter": "Q3 2020",
@@ -242,8 +221,7 @@
                     "profitMargins": 27.1,
                     "fcf": 1300000000,
                     "qoq": 33.7,
-                    "yoy": 17.0,
-                    "debt": 5500000000
+                    "yoy": 17.0
                 },
                 {
                     "quarter": "Q2 2020",
@@ -253,8 +231,7 @@
                     "profitMargins": 13.5,
                     "fcf": 400000000,
                     "qoq": -8.1,
-                    "yoy": 5.0,
-                    "debt": 6100000000
+                    "yoy": 5.0
                 },
                 {
                     "quarter": "Q1 2020",
@@ -264,8 +241,7 @@
                     "profitMargins": 15.5,
                     "fcf": 610000000,
                     "qoq": -13.1,
-                    "yoy": 14.1,
-                    "debt": 6100000000
+                    "yoy": 14.1
                 }
             ]
         },
@@ -1158,12 +1134,13 @@
             "financials": [
                 {
                     "quarter": "Q4 2025",
-                    "revenue": null,
-                    "eps": null,
-                    "profitMargins": null,
-                    "fcf": null,
-                    "qoq": null,
-                    "yoy": null
+                    "marketCap": 27500000000,
+                    "revenue": 1180000000,
+                    "eps": 1.11,
+                    "profitMargins": 0.383,
+                    "fcf": 553000000,
+                    "qoq": 0.18,
+                    "yoy": 0.446
                 },
                 {
                     "quarter": "Q3 2025",
@@ -1379,12 +1356,12 @@
             "financials": [
                 {
                     "quarter": "Q4 2025",
-                    "revenue": null,
-                    "eps": null,
-                    "profitMargins": null,
-                    "fcf": null,
-                    "qoq": null,
-                    "yoy": null
+                    "revenue": 987800000,
+                    "eps": 0.35,
+                    "profitMargins": 0.276,
+                    "fcf": 123100000,
+                    "qoq": 0.69,
+                    "yoy": 1.74
                 },
                 {
                     "quarter": "Q3 2025",
@@ -1600,12 +1577,13 @@
             "financials": [
                 {
                     "quarter": "Q4 2025",
-                    "revenue": null,
-                    "eps": null,
-                    "profitMargins": null,
-                    "fcf": null,
-                    "qoq": null,
-                    "yoy": null
+                    "marketCap": 42120000000,
+                    "revenue": 2023000000,
+                    "eps": 0.67,
+                    "profitMargins": 0.448,
+                    "fcf": 769400000,
+                    "qoq": 0.115,
+                    "yoy": 0.429
                 },
                 {
                     "quarter": "Q3 2025",
@@ -1821,12 +1799,13 @@
             "financials": [
                 {
                     "quarter": "Q4 2025",
-                    "revenue": null,
-                    "eps": null,
-                    "profitMargins": null,
-                    "fcf": null,
-                    "qoq": null,
-                    "yoy": null
+                    "marketCap": 52380000000,
+                    "revenue": 1640000000,
+                    "eps": 1.08,
+                    "profitMargins": 0.402,
+                    "fcf": 2970000000,
+                    "qoq": 0.145,
+                    "yoy": 1.70
                 },
                 {
                     "quarter": "Q3 2025",
