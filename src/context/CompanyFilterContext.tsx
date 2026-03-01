@@ -4,6 +4,7 @@ import { useCompanyData } from '../hooks/useCompanyData';
 interface CompanyFilterContextType {
     visibleCompanyIds: string[];
     toggleCompany: (id: string) => void;
+    toggleAllCompanies: (companyIds: string[], isSelected: boolean) => void;
     isCompanyVisible: (id: string) => boolean;
 }
 
@@ -30,10 +31,18 @@ export const CompanyFilterProvider: React.FC<{ children: React.ReactNode }> = ({
         });
     }, []);
 
+    const toggleAllCompanies = useCallback((companyIds: string[], isSelected: boolean) => {
+        if (isSelected) {
+            setVisibleCompanyIds(companyIds);
+        } else {
+            setVisibleCompanyIds([]);
+        }
+    }, []);
+
     const isCompanyVisible = useCallback((id: string) => visibleCompanyIds.includes(id), [visibleCompanyIds]);
 
     return (
-        <CompanyFilterContext.Provider value={{ visibleCompanyIds, toggleCompany, isCompanyVisible }}>
+        <CompanyFilterContext.Provider value={{ visibleCompanyIds, toggleCompany, toggleAllCompanies, isCompanyVisible }}>
             {children}
         </CompanyFilterContext.Provider>
     );

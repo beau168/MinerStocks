@@ -12,8 +12,10 @@ interface SidebarProps {
 
 export const Sidebar: React.FC<SidebarProps> = ({ className = '', onClose }) => {
     const { companies } = useCompanyData();
-    const { toggleCompany, isCompanyVisible } = useCompanyFilter();
+    const { toggleCompany, isCompanyVisible, toggleAllCompanies, visibleCompanyIds } = useCompanyFilter();
     const { theme, toggleTheme } = useTheme();
+
+    const allSelected = companies.length > 0 && visibleCompanyIds.length === companies.length;
 
     return (
         <aside className={`w-64 h-full bg-white dark:bg-surface-darker flex flex-col border-r border-gray-200 dark:border-border-dark flex-shrink-0 z-20 transition-all ${className}`}>
@@ -59,6 +61,16 @@ export const Sidebar: React.FC<SidebarProps> = ({ className = '', onClose }) => 
 
                     {/* Companies List (Only visible under Dashboard) */}
                     <div className="flex flex-col gap-1.5 pl-9 pb-2 pt-1">
+                        {companies.length > 0 && (
+                            <>
+                                <Checkbox
+                                    label="Select All"
+                                    checked={allSelected}
+                                    onChange={() => toggleAllCompanies(companies.map(c => c.id), !allSelected)}
+                                />
+                                <div className="h-px bg-gray-200 dark:bg-border-dark my-1"></div>
+                            </>
+                        )}
                         {companies.map(company => (
                             <Checkbox
                                 key={company.id}

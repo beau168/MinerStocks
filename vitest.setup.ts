@@ -27,7 +27,10 @@ beforeAll(() => {
         return Promise.resolve({
             ok: true,
             json: () => Promise.resolve(body),
-        } as Response);
+            headers: {
+                get: () => 'application/json'
+            }
+        } as unknown as Response);
     }) as any;
 });
 
