@@ -27,108 +27,114 @@ export const useCompanyData = () => {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        if (cachedData) {
-            setData(cachedData);
-            setLoading(false);
-            return;
-        }
+        // Function to load and compare data
+        const loadAndCompare = async () => {
+            const loadDataInner = async (): Promise<FinancialData> => {
+                try {
+                    const [companyRes, earningsRes, marketCapRes] = await Promise.all([
+                        fetch(`${window.location.origin}/data/data_companies.json`, { cache: 'no-store' }),
+                        fetch(`${window.location.origin}/data/data_quarterly_earnings.json`, { cache: 'no-store' }),
+                        fetch('https://docs.google.com/spreadsheets/d/1AC8Q0u63q49rjPc-HNA3mvQN-SFPjjK1aFuVR1lYUOg/export?format=csv&gid=0', { cache: 'no-store' }).catch(err => {
+                            console.warn('Failed to fetch market caps:', err);
+                            return null;
+                        })
+                    ]);
 
-        const loadData = async (): Promise<FinancialData> => {
-            try {
-                // Use relative paths to ensure it works even if the base URL is not the root
-                // Vite handles these correctly relative to the deployment root
-                const [companyRes, earningsRes, marketCapRes] = await Promise.all([
-                    fetch(`${window.location.origin}/data/data_companies.json`),
-                    fetch(`${window.location.origin}/data/data_quarterly_earnings.json`),
-                    fetch('https://docs.google.com/spreadsheets/d/1AC8Q0u63q49rjPc-HNA3mvQN-SFPjjK1aFuVR1lYUOg/export?format=csv&gid=0').catch(err => {
-                        console.warn('Failed to fetch market caps:', err);
-                        return null;
-                    })
-                ]);
+                    if (!companyRes.ok || !earningsRes.ok) {
+                        throw new Error(`Failed to fetch data: ${companyRes.status} ${companyRes.statusText}`);
+                    }
 
-                if (!companyRes.ok || !earningsRes.ok) {
-                    throw new Error(`Failed to fetch data: ${companyRes.status} ${companyRes.statusText}`);
-                }
+                    const contentType1 = companyRes.headers.get('content-type');
+                    const contentType2 = earningsRes.headers.get('content-type');
+                    if ((contentType1 && !contentType1.includes('application/json')) ||
+                        (contentType2 && !contentType2.includes('application/json'))) {
+                        throw new Error('Received non-JSON response from server. Check if data files exist.');
+                    }
 
-                const contentType1 = companyRes.headers.get('content-type');
-                const contentType2 = earningsRes.headers.get('content-type');
-                if ((contentType1 && !contentType1.includes('application/json')) ||
-                    (contentType2 && !contentType2.includes('application/json'))) {
-                    // This often happens if a SPA redirects missing files to index.html
-                    throw new Error('Received non-JSON response from server. Check if data files exist.');
-                }
+                    const companyMetadata = await companyRes.json();
+                    const quarterlyEarnings = await earningsRes.json();
 
-                const companyMetadata = await companyRes.json();
-                const quarterlyEarnings = await earningsRes.json();
+                    if (!companyMetadata.companies || !quarterlyEarnings.companies) {
+                        throw new Error('Invalid data format received');
+                    }
 
-                if (!companyMetadata.companies || !quarterlyEarnings.companies) {
-                    throw new Error('Invalid data format received');
-                }
-
-                // Parse Market Caps from CSV
-                const marketCaps: Record<string, number> = {};
-                if (marketCapRes && marketCapRes.ok) {
-                    try {
-                        const csvText = await marketCapRes.text();
-                        const lines = csvText.split('\n');
-                        for (let i = 1; i < lines.length; i++) {
-                            const line = lines[i].trim();
-                            if (line) {
-                                const parts = line.split(',');
-                                if (parts.length >= 2) {
-                                    const ticker = parts[0].trim().toUpperCase();
-                                    const mc = parseFloat(parts[1].trim());
-                                    if (!isNaN(mc)) {
-                                        marketCaps[ticker] = mc;
-                                        // Handle edge case for Barrick Gold (often 'GOLD' but 'B' in some sources)
-                                        if (ticker === 'B') {
-                                            marketCaps['GOLD'] = mc;
+                    const marketCaps: Record<string, number> = {};
+                    if (marketCapRes && marketCapRes.ok) {
+                        try {
+                            const csvText = await marketCapRes.text();
+                            const lines = csvText.split('\n');
+                            for (let i = 1; i < lines.length; i++) {
+                                const line = lines[i].trim();
+                                if (line) {
+                                    const parts = line.split(',');
+                                    if (parts.length >= 2) {
+                                        const ticker = parts[0].trim().toUpperCase();
+                                        const mc = parseFloat(parts[1].trim());
+                                        if (!isNaN(mc)) {
+                                            marketCaps[ticker] = mc;
+                                            if (ticker === 'B') marketCaps['GOLD'] = mc;
                                         }
                                     }
                                 }
                             }
+                        } catch (e) {
+                            console.error('Error parsing market caps CSV:', e);
                         }
-                    } catch (e) {
-                        console.error('Error parsing market caps CSV:', e);
                     }
+
+                    const mergedCompanies = companyMetadata.companies.map((meta: any) => {
+                        const financials = quarterlyEarnings.companies.find((f: any) => f.id === meta.id)?.financials || [];
+                        const mc = marketCaps[meta.ticker?.toUpperCase()] !== undefined
+                            ? marketCaps[meta.ticker.toUpperCase()]
+                            : meta.marketCap;
+
+                        return {
+                            ...meta,
+                            marketCap: mc,
+                            financials
+                        } as Company;
+                    });
+
+                    return { companies: mergedCompanies };
+                } catch (err: any) {
+                    console.error('Error loading company data:', err);
+                    throw err;
+                }
+            };
+
+            setLoading(true);
+            try {
+                // If there's already a fetch in progress, wait for it
+                if (fetchPromise) {
+                    const result = await fetchPromise;
+                    setData(result);
+                    setLoading(false);
+                    return;
                 }
 
-                const mergedCompanies = companyMetadata.companies.map((meta: any) => {
-                    const financials = quarterlyEarnings.companies.find((f: any) => f.id === meta.id)?.financials || [];
-                    const mc = marketCaps[meta.ticker?.toUpperCase()] !== undefined
-                        ? marketCaps[meta.ticker.toUpperCase()]
-                        : meta.marketCap;
+                // Start new fetch
+                fetchPromise = loadDataInner();
+                const freshData = await fetchPromise;
 
-                    return {
-                        ...meta,
-                        marketCap: mc,
-                        financials
-                    } as Company;
-                });
-
-                const result = { companies: mergedCompanies };
-                cachedData = result;
-                return result;
+                // Compare with current cache
+                const isDifferent = JSON.stringify(freshData) !== JSON.stringify(cachedData);
+                if (isDifferent) {
+                    cachedData = freshData;
+                    setData(freshData);
+                } else if (!data) {
+                    // Case where data isn't set yet but it matches the global cache (initial load)
+                    setData(cachedData);
+                }
             } catch (err: any) {
-                console.error('Error loading company data:', err);
-                throw err;
+                setError(err.message || 'Failed to load company data');
+                fetchPromise = null;
+            } finally {
+                setLoading(false);
+                fetchPromise = null; // Always clear to allow fresh checks on next mount
             }
         };
 
-        if (!fetchPromise) {
-            fetchPromise = loadData();
-        }
-
-        fetchPromise
-            .then(d => {
-                setData(d);
-                setLoading(false);
-            })
-            .catch(err => {
-                setError(err.message || 'Failed to load company data');
-                setLoading(false);
-                fetchPromise = null; // Allow retry on next mount
-            });
+        loadAndCompare();
     }, []);
 
     const getCompanyById = useCallback((id: string): Company | undefined => {
