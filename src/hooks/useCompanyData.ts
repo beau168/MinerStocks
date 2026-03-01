@@ -37,9 +37,13 @@ export const useCompanyData = () => {
             try {
                 // Use relative paths to ensure it works even if the base URL is not the root
                 // Vite handles these correctly relative to the deployment root
-                const [companyRes, earningsRes] = await Promise.all([
+                const [companyRes, earningsRes, marketCapRes] = await Promise.all([
                     fetch(`${window.location.origin}/data/data_companies.json`),
-                    fetch(`${window.location.origin}/data/data_quarterly_earnings.json`)
+                    fetch(`${window.location.origin}/data/data_quarterly_earnings.json`),
+                    fetch('https://docs.google.com/spreadsheets/d/1AC8Q0u63q49rjPc-HNA3mvQN-SFPjjK1aFuVR1lYUOg/export?format=csv&gid=0').catch(err => {
+                        console.warn('Failed to fetch market caps:', err);
+                        return null;
+                    })
                 ]);
 
                 if (!companyRes.ok || !earningsRes.ok) {
@@ -61,10 +65,43 @@ export const useCompanyData = () => {
                     throw new Error('Invalid data format received');
                 }
 
+                // Parse Market Caps from CSV
+                const marketCaps: Record<string, number> = {};
+                if (marketCapRes && marketCapRes.ok) {
+                    try {
+                        const csvText = await marketCapRes.text();
+                        const lines = csvText.split('\n');
+                        for (let i = 1; i < lines.length; i++) {
+                            const line = lines[i].trim();
+                            if (line) {
+                                const parts = line.split(',');
+                                if (parts.length >= 2) {
+                                    const ticker = parts[0].trim().toUpperCase();
+                                    const mc = parseFloat(parts[1].trim());
+                                    if (!isNaN(mc)) {
+                                        marketCaps[ticker] = mc;
+                                        // Handle edge case for Barrick Gold (often 'GOLD' but 'B' in some sources)
+                                        if (ticker === 'B') {
+                                            marketCaps['GOLD'] = mc;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Error parsing market caps CSV:', e);
+                    }
+                }
+
                 const mergedCompanies = companyMetadata.companies.map((meta: any) => {
                     const financials = quarterlyEarnings.companies.find((f: any) => f.id === meta.id)?.financials || [];
+                    const mc = marketCaps[meta.ticker?.toUpperCase()] !== undefined
+                        ? marketCaps[meta.ticker.toUpperCase()]
+                        : meta.marketCap;
+
                     return {
                         ...meta,
+                        marketCap: mc,
                         financials
                     } as Company;
                 });

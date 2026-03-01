@@ -38,11 +38,6 @@
 - `src/components/dashboard/DataGrid.test.tsx` - Unit tests for DataGrid
 - `src/components/dashboard/QuarterSelector.tsx` - Quarter dropdown
 
-### Chart Components
-- `src/components/charts/TrendChart.tsx` - Line chart using Recharts
-- `src/components/charts/TrendChart.test.tsx` - Unit tests for TrendChart
-- `src/components/charts/MetricSelector.tsx` - Metric dropdown for chart
-
 ### Earnings Components
 - `src/components/earnings/EarningsCalendar.tsx` - Earnings date table
 - `src/components/earnings/EarningsCalendar.test.tsx` - Unit tests for EarningsCalendar
@@ -130,26 +125,9 @@ Update the file after completing each sub-task, not just after completing an ent
   - [x] 3.7 Create `Dashboard.tsx` page component that assembles:
     - PageHeader with title "Market Overview: {selectedQuarter}" and QuarterSelector
     - DataGrid
-    - (Placeholder for TrendChart - to be added in Task 4.0)
   - [x] 3.8 Update `App.tsx` to use MainLayout and render Dashboard as the home route
   - [x] 3.9 Add pagination to DataGrid (10 items per page) with Previous/Next buttons
   - [x] 3.10 Write unit tests for DataGrid component
-
-- [x] 4.0 Implement Trend Chart
-  - [x] 4.1 Install Recharts: `npm install recharts`
-  - [x] 4.2 Create `src/components/charts/` directory
-  - [x] 4.3 Create `MetricSelector.tsx` dropdown with options: Revenue, EPS, Profit Margins, FCF
-  - [x] 4.4 Create `TrendChart.tsx` line chart component using Recharts:
-    - X-axis: quarters (e.g., Q4 2024, Q1 2025, Q2 2025, Q3 2025)
-    - Y-axis: selected metric value
-    - One line per visible company (use company.color for each line)
-    - Legend showing company names with their colors
-  - [x] 4.5 Integrate TrendChart into Dashboard.tsx below the DataGrid
-  - [x] 4.6 Ensure chart updates when:
-    - MetricSelector changes
-    - Company filter checkboxes change
-  - [x] 4.7 Add hover tooltips to chart showing exact values
-  - [x] 4.8 Write unit tests for TrendChart component
 
 - [x] 5.0 Build Earnings Calendar
   - [x] 5.1 Create `src/components/earnings/` directory
@@ -163,6 +141,14 @@ Update the file after completing each sub-task, not just after completing an ent
   - [x] 5.6 Create route in App.tsx for `/earnings` that renders EarningsCalendar
   - [x] 5.7 Style table using the same patterns as DataGrid (bg-surface-dark, hover states, etc.)
   - [x] 5.8 Write unit tests for EarningsCalendar component
+
+- [x] 6.0 Implement Dashboard Enhancements
+  - [x] 6.1 Add "Select All" / "Unselect All" option to Sidebar company filters
+  - [x] 6.2 Make DataGrid columns sortable (asc/desc)
+  - [x] 6.3 Update unit tests for DataGrid and Sidebar
+  - [x] 6.4 Implement Single Company View logic in `DataGrid.tsx`
+  - [x] 6.5 When exactly 1 company is selected, map rows to all available quarters for that company (newest at the top)
+  - [x] 6.6 Update DataGrid columns and rendering to support displaying historical quarterly data for the single selected company
 
   - [x] 7.6 Add loading state while data.json is being loaded
   - [x] 7.7 Add error boundary or error message if data.json fails to load
@@ -190,10 +176,16 @@ Before marking the feature as complete, verify:
 - [x] Theme persists across page reloads
 - [x] Dashboard displays all 10 columns correctly
 - [x] Company filter checkboxes work in sidebar
-- [x] Quarter selector updates both grid and chart
-- [x] Chart displays lines for all visible companies
+- [x] Quarter selector updates grid
 - [x] Earnings Calendar shows upcoming dates, sorted correctly
 - [x] Application is responsive on iPad and iPhone
 - [x] Lighthouse accessibility score > 90
 
 > **⚠️ Note:** Vite and @vitejs/plugin-react were downgraded on 2026-02-13 to maintain compatibility with Node.js v20.11.0. If Node.js is upgraded to v20.19+ or v22.12+, these packages can be restored to their latest major versions (Vite 7 / plugin-react 5).
+
+---
+
+- [x] 9.0 Multi-Company Historical Comparison
+  - [x] 9.1 Add UI control (e.g., a "Compare All Quarters" toggle or a separate tab) to switch the dashboard into Historical Comparison mode.
+  - [x] 9.2 Update DataGrid to display and group all quarterly earnings for *multiple* selected companies in a single grid.
+  - [x] 9.3 Ensure the quarters are sorted chronologically with the latest quarter on top (e.g., all Q4 2024 rows first, then all Q3 2024 rows).

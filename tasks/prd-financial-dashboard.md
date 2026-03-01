@@ -14,7 +14,6 @@ Investors tracking multiple mining companies need a centralized, user-friendly i
 ### Solution
 A React-based single-page application with:
 - A responsive data grid displaying key financial metrics
-- Interactive charts for trend analysis
 - An earnings calendar for upcoming report dates
 - Dark/light theme support
 - Mobile-first responsive design
@@ -27,7 +26,6 @@ A React-based single-page application with:
 |------|--------|
 | **G1**: Provide clear, accurate financial data display | Users can view all 10 financial columns without horizontal scrolling on desktop |
 | **G2**: Enable quick company comparison | Users can filter visible companies within 2 clicks |
-| **G3**: Support trend analysis | Users can compare up to 5 companies on a line chart across 4-8 quarters |
 | **G4**: Ensure mobile accessibility | All features are fully functional on iPad and iPhone |
 | **G5**: Improve readability | Dark mode reduces eye strain; light mode works in bright environments |
 
@@ -42,13 +40,8 @@ A React-based single-page application with:
 | US-02 | User | Check/uncheck companies in the sidebar | I can focus on specific companies of interest |
 | US-03 | User | Select a different quarter from a dropdown | I can view historical data and compare quarters |
 | US-04 | User | See companies ranked by Market Cap (highest first) | I can identify the largest players in the sector |
-
-### 3.2 Charts
-| ID | As a... | I want to... | So that... |
-|----|---------|-------------|-----------|
-| US-05 | User | View a line chart showing trends over multiple quarters | I can identify performance patterns |
-| US-06 | User | Select a metric (Revenue, EPS, Profit Margins, FCF) from a dropdown | I can compare companies on the metric that matters most to me |
-| US-07 | User | See each company represented by a unique color | I can easily distinguish between companies on the chart |
+| US-11 | User | See all historical quarters for a single company when it is the only one selected | I can analyze its quarter-over-quarter performance |
+| US-12 | User | Compare multiple companies across all their historical quarters | I can compare the historical performance trajectories of several companies at once without changing the quarter dropdown constantly |
 
 ### 3.3 Earnings Calendar
 | ID | As a... | I want to... | So that... |
@@ -85,17 +78,11 @@ A React-based single-page application with:
 | FR-11 | The system SHALL update the data grid when a different quarter is selected |
 | FR-12 | The system SHALL display positive QoQ/YoY values in green and negative values in red |
 | FR-13 | The system SHALL display tooltips for abbreviated column headers (EPS, FCF, QoQ, YoY) |
-
-### 4.3 Charts
-| ID | Requirement |
-|----|-------------|
-| FR-14 | The system SHALL display a line chart below the data grid |
-| FR-15 | The system SHALL show a metric selector dropdown above the chart (options: Revenue, EPS, Profit Margins, FCF) |
-| FR-16 | The chart SHALL display data for 4-8 quarters (depending on available data in `data.json`) |
-| FR-17 | Each company SHALL be represented by a unique, distinguishable color on the chart |
-| FR-18 | The chart SHALL include a legend identifying each company by color |
-| FR-19 | The chart SHALL update when a different metric is selected |
-| FR-20 | The chart SHALL only show companies that are currently checked/visible in the sidebar |
+| FR-33 | The system SHALL switch to "Single Company View" when exactly one company is selected in the sidebar |
+| FR-34 | In Single Company View, the data grid rows SHALL represent available quarters for that company, sorted with the most recent quarter at the top, ignoring the Quarter Selector dropdown |
+| FR-35 | The system SHALL provide a "Multi-Company Historical Comparison" toggle or dedicated view. |
+| FR-36 | When in Historical Comparison mode, the system SHALL display all available quarters for all currently selected companies in a single grid. |
+| FR-37 | In Historical Comparison mode, rows SHALL be sorted primarily by Quarter (chronologically descending, latest first) and secondarily by the active column sort config. |
 
 ### 4.4 Earnings Calendar
 | ID | Requirement |
@@ -160,10 +147,8 @@ The following features are **explicitly excluded** from this version:
 │  - Logo      │  ├────────────────────────────────────────────┤ │
 │  - Nav links │  │  Data Grid Card                            │ │
 │  - Filters   │  │  bg-surface-dark rounded-xl border         │ │
-│  - Theme btn │  ├────────────────────────────────────────────┤ │
-│              │  │  Chart Card                                │ │
-│              │  │  bg-surface-dark rounded-xl border         │ │
-│              │  └────────────────────────────────────────────┘ │
+│  - Theme btn │  └────────────────────────────────────────────┘ │
+│              │                                                 │
 └──────────────┴──────────────────────────────────────────────────┘
 ```
 
@@ -301,9 +286,6 @@ src/
 │   │   ├── Dashboard.tsx         # Main dashboard page
 │   │   ├── DataGrid.tsx          # Financial data table
 │   │   └── QuarterSelector.tsx   # Quarter dropdown
-│   ├── charts/
-│   │   ├── TrendChart.tsx        # Line chart component
-│   │   └── MetricSelector.tsx    # Metric dropdown
 │   └── earnings/
 │       └── EarningsCalendar.tsx  # Earnings date table
 ├── data/
@@ -344,7 +326,6 @@ Custom CSS classes in `<style>` block:
 | Styling | Tailwind CSS 4.x (latest) |
 | Build Tool | Vite 7.x |
 | Language | TypeScript 5.x |
-| Charts | Recharts (or Chart.js) |
 | State Management | React Context + useState (no Redux needed for this scope) |
 
 ### 7.2 Data Schema (`data.json`)
@@ -380,13 +361,7 @@ Custom CSS classes in `<style>` block:
 }
 ```
 
-### 7.3 Dependencies to Install
-```bash
-npm install recharts
-```
-
 ### 7.4 Performance Considerations
-- Lazy-load chart component to reduce initial bundle size
 - Memoize filtered company data with `useMemo`
 - Use `React.memo` for grid row components
 
@@ -408,7 +383,6 @@ npm install recharts
 
 | ID | Question | Status |
 |----|----------|--------|
-| OQ-01 | Should the chart support tooltips on hover showing exact values? | **Recommended: Yes** |
 | OQ-02 | Should the earnings calendar show past earnings dates or only future? | **Assumption: Future only** |
 | OQ-03 | What is the maximum number of companies to support in `data.json`? | **Assumption: Up to 20** |
 | OQ-04 | Should pagination be added to the data grid if there are many companies? | **Assumption: Yes, 10 per page** |
@@ -427,12 +401,6 @@ npm install recharts
 - [ ] Implement quarter selector dropdown
 - [ ] Build data grid with all 10 columns
 - [ ] Add conditional styling for QoQ/YoY values
-
-### Phase 3: Charts (Priority: Medium)
-- [ ] Integrate Recharts library
-- [ ] Build line chart component
-- [ ] Implement metric selector dropdown
-- [ ] Add company color coding and legend
 
 ### Phase 4: Earnings Calendar (Priority: Medium)
 - [ ] Build earnings calendar table component

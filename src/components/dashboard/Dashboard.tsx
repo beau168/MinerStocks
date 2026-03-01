@@ -3,8 +3,6 @@ import { PageHeader } from '../layout/PageHeader';
 import { QuarterSelector } from './QuarterSelector';
 import { DataGrid } from './DataGrid';
 import { useCompanyData } from '../../hooks/useCompanyData';
-import { TrendChart } from '../charts/TrendChart';
-import { MetricSelector, type MetricType } from '../charts/MetricSelector';
 import { useSEO } from '../../hooks/useSEO';
 
 export const Dashboard: React.FC = () => {
@@ -14,7 +12,7 @@ export const Dashboard: React.FC = () => {
     });
     const { getAvailableQuarters, loading, error } = useCompanyData();
     const [selectedQuarter, setSelectedQuarter] = useState<string>('');
-    const [selectedMetric, setSelectedMetric] = useState<MetricType>('revenue');
+    const isComparisonMode = false;
 
     const quarters = getAvailableQuarters();
 
@@ -44,24 +42,27 @@ export const Dashboard: React.FC = () => {
     return (
         <div className="flex flex-col gap-8">
             <PageHeader
-                title={`Market Overview: ${selectedQuarter}`}
+                title={isComparisonMode ? 'Historical Comparison' : `Market Overview: ${selectedQuarter}`}
                 subtitle="Tracking the top performers in the gold mining sector."
             >
-                <QuarterSelector
-                    selectedQuarter={selectedQuarter}
-                    onChange={setSelectedQuarter}
-                />
+                {/* <button
+                    onClick={() => setIsComparisonMode(!isComparisonMode)}
+                    className={`px-4 py-2 border rounded-lg text-sm font-medium transition-colors ${isComparisonMode
+                            ? 'bg-primary text-white border-primary shadow-sm hover:bg-blue-600'
+                            : 'bg-white dark:bg-surface-dark border-gray-200 dark:border-border-dark text-slate-700 dark:text-text-bright shadow-sm hover:bg-gray-50 dark:hover:bg-surface-darker/60'
+                        }`}
+                >
+                    Compare All Quarters
+                </button> */}
+                {!isComparisonMode && (
+                    <QuarterSelector
+                        selectedQuarter={selectedQuarter}
+                        onChange={setSelectedQuarter}
+                    />
+                )}
             </PageHeader>
 
-            <DataGrid selectedQuarter={selectedQuarter} />
-
-            <div className="flex flex-col gap-4">
-                <div className="flex items-center justify-between">
-                    <h2 className="text-xl font-bold text-white">Historical Trends</h2>
-                    <MetricSelector selectedMetric={selectedMetric} onChange={setSelectedMetric} />
-                </div>
-                <TrendChart selectedMetric={selectedMetric} />
-            </div>
+            <DataGrid selectedQuarter={selectedQuarter} isComparisonMode={isComparisonMode} />
         </div>
     );
 };
